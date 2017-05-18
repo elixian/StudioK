@@ -30,5 +30,5 @@
 <body>
 <div id="wrapper">
 <div id="header">
-
+<h1>Studio K</h1>
 </div>
