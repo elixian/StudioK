@@ -24,11 +24,13 @@
 <!--<![endif]-->
 
 <head>
-<title>Tutorial theme</title>
+<title>Studio K</title>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 </head>
 <body>
 <div id="wrapper">
 <div id="header">
+    <div id="header-logo-img"></div>
+    
 <h1>Studio K</h1>
 </div>

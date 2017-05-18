@@ -68,11 +68,20 @@ body {
     background-color: #ececec;
 }
 
-    #header > *{
+    #header h1{
         font-family: banner-font;
         margin-top: 5px;
         font-size: 5em;
         letter-spacing: 0.3em;
+    }
+    
+    #header #header-logo-img{
+        background:url('images/tree145.png') no-repeat left;
+        height: 150px;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
     }
 
 #footer {
