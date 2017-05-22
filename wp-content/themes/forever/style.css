@@ -27,24 +27,27 @@ Visual elements, design, and inspiration for this theme have been taken from the
 /* =Reset
 -------------------------------------------------------------- */
 
-
-
-body {
-    text-align: center;margin:0;overflow:hidden;
-    background: #e7e7dd;
-    background: url("images/noisy-texture.png") repeat ;
-}
-#wrapper { display: block; border: 1px #a2a2a2 solid; width:100%; margin:0px auto; }
-#content { width: 75%; border: 2px #a2a2a2 solid; float: left;margin: 15px 0 0 15px; }
-#sidebar { width: 20%; border: 2px #a2a2a2 solid; float: right;margin: 15px 20px 0; }
-#delimiter { clear: both; }
-#footer { border: 2px #a2a2a2 solid; }
-.title { font-size: 11pt; font-family: verdana; font-weight: bold; }
-
 @font-face {
     font-family: banner-font;
     src: url('fonts/Billy Ohio.ttf');
 }
+
+
+body {
+    text-align: center;
+    margin:0;
+    overflow-x:hidden;
+    background-image: url('images/645b5be4.png') ;
+
+ 
+}
+#wrapper { display: block; width:80%; margin:0px auto; }
+#content { width: 75%; float: left; margin: 15px 0 ; }
+#sidebar { width: 20%; float: right; margin: 15px ; }
+#delimiter { clear: both; }
+#footer {  }
+.title { font-size: 11pt; font-family: verdana; font-weight: bold; }
+
 
 /*#wrapper_grid{*/
 /*    color:red;*/
@@ -59,13 +62,12 @@ body {
 /*}*/
 
 #header {
+    display: block;
     height: 150px;
     overflow: hidden;
     position: relative;
     left: 0;
     top: 0;
-    display: block;
-    background-color: #ececec;
 }
 
     #header h1{
@@ -82,16 +84,31 @@ body {
         position: absolute;
         top: 0px;
         left: 0px;
+
+    }
+    
+    #header #header-logo-img_right{
+        background: url(images/tree145.png) no-repeat right;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 0px;
+    z-index: 15;
+    right: 0px;
+            -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
     }
 
 #footer {
     background-color: orange;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-    overflow:hidden;
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 5em;
 }
 
 
@@ -108,3 +125,116 @@ body {
     width: 20%;
 }
 
+
+
+/* = Menu
+------------------------------------------- */
+/* Navigation */
+a {
+color : #333;
+}
+#nav {
+margin-left : 10%;
+margin-top : 25px;
+position : relative;
+width : 62%;
+padding : 0;
+background : transparent;
+}
+#menu-main {
+top : 0;
+padding : 0;
+line-height : 100%;
+width : 90%;
+}
+#menu-main li {
+margin : 0 2px;
+letter-spacing : -0.05em;
+padding : 0 0 8px;
+float : left;
+position : relative;
+list-style : none;
+}
+#menu-main a {
+color : #0090ff;
+text-decoration : none;
+display : block;
+padding : 8px 20px;
+margin : 0;
+}
+#menu-main a:hover {
+color : Red !important ;
+}
+#menu-main .current a, #menu-main li:hover > a {
+background : #d1d1d1;
+background : grey;
+background : transparent;
+color : #444;
+border-top : 1px solid #f8f8f8;
+}
+#menu-main ul li:hover a, #menu-main li:hover li a {
+border : none;
+color : #666;
+}
+#menu-main ul a:hover {
+background : #0399d4 !important ;
+color : red !important ;
+}
+#menu-main ul {
+background : #ddd;
+display : none;
+margin : 0;
+padding : 0;
+width : 200px;
+position : absolute;
+top : 35px;
+left : 0;
+border : 1px solid #b4b4b4;
+}
+#menu-main li:hover > ul {
+display : block;
+}
+#menu-main ul li {
+float : none;
+margin : 0;
+padding : 0;
+}
+#menu-main ul a {
+font-weight : normal;
+}
+#menu-main ul ul {
+left : 200px;
+top : -3px;
+}
+#menu-main:after {
+content : ".";
+display : block;
+visibility : hidden;
+line-height : 0;
+height : 0;
+}
+#menu-main {
+display : inline-block;
+}
+html[xmlns] #menu-main {
+display : block;
+}
+* html #menu-main {
+height : 1%;
+}
+#main-nav:after {
+content : ".";
+display : block;
+visibility : hidden;
+line-height : 0;
+height : 0;
+}
+#main-nav {
+display : inline-block;
+}
+html[xmlns] #main-nav {
+display : block;
+}
+* html #main-nav {
+height : 1%;
+}

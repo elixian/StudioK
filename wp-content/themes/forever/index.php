@@ -26,8 +26,10 @@
      // the query
      $wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-1));
      ?>
-     
-
+     <?php
+$param = isset($_GET["dispfilter"]);
+?>
+<?php if(!$param):?>
      <?php if ( $wpb_all_query->have_posts() ) : ?>
 <div id="wrapper_grid">
 
@@ -41,19 +43,22 @@
 		    <!-- clear pour garder les élément dans le flus -->
 		    <div class="clear">	</div>
 		     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><p><?php echo get_field('etat',get_the_ID()); ?></p>
+		     <?php echo '<p>'. get_post_type(). '</p>';?>
 		</div>
 	
 	<?php endwhile; ?>
 	<!-- end of the loop -->
 
      </div>
-
 	<?php wp_reset_postdata(); ?>
 
 <?php else : ?>
 	<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
-                    
+ <?php else: ?>
+ <?php get_template_part( 'acf' ); ?>
+
+ <?php endif ?>
      </div>
 </div>
     

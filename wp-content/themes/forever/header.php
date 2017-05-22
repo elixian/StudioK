@@ -29,8 +29,14 @@
 </head>
 <body>
 <div id="wrapper">
-<div id="header">
-    <div id="header-logo-img"></div>
-    
-<h1>Studio K</h1>
-</div>
+    <div id="header">
+        <div id="header-logo-img"></div>
+   
+        <h1>Studio K</h1>
+        
+        <div id="header-logo-img_right"></div>
+    </div>
+        <div id="nav">
+            <?php wp_nav_menu( array('menu' => 'main' )); ?>
+        </div>
+
