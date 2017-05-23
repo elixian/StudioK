@@ -10,33 +10,29 @@
  * @since Forever 1.0
  */
 ?><!DOCTYPE html>
-<!--[if IE 6]>
-<html id="ie6" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 7]>
-<html id="ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html id="ie8" <?php language_attributes(); ?>>
-<![endif]-->
+
 <!--[if !(IE 6) & !(IE 7) & !(IE 8)]><!-->
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 <!--<![endif]-->
 
 <head>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width">
 <title>Studio K</title>
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+<?php wp_head(); ?>
 </head>
 <body>
-<div id="wrapper">
-    <div id="header">
-        <div id="header-logo-img"></div>
-   
-        <h1>Studio K</h1>
-        
-        <div id="header-logo-img_right"></div>
-    </div>
-        <div id="nav">
-            <?php wp_nav_menu( array('menu' => 'main' )); ?>
-        </div>
+    <div id="wrapper_layer-white">
+        <div id="wrapper">
+            
+                <div id="header">
+      
+                    
+                    <h1>Studio <span id="header_title-ka">KA</span></h1>
+                    <p>handmade creativity <b>&</b> project passion </p>
+              
+                </div>
+                <div id="nav">
+                    <?php wp_nav_menu( array('menu' => 'main' )); ?>
+                </div>
 

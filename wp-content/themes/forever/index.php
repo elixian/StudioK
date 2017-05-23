@@ -20,7 +20,7 @@
 <?php get_header(); ?>
 <div id="main">
      <div id="content">
-          <h1>Main Area</h1>
+      
 
      <?php 
      // the query
@@ -38,18 +38,28 @@ $param = isset($_GET["dispfilter"]);
 	<?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
 		
 		
-		<div class="grid_item">
-		    <?php the_post_thumbnail('thumbnail');?>
+		<!--<div class="grid_item">-->
+		<!--    <?php the_post_thumbnail('thumbnail');?>-->
 		    <!-- clear pour garder les élément dans le flus -->
-		    <div class="clear">	</div>
-		     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><p><?php echo get_field('etat',get_the_ID()); ?></p>
-		     <?php echo '<p>'. get_post_type(). '</p>';?>
-		</div>
+		<!--    <div class="clear">	</div>-->
+		<!--     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><p><?php echo get_field('etat',get_the_ID()); ?></p>-->
+		<!--     <?php echo '<p>'. get_post_type(). '</p>';?>-->
+		<!--</div>-->
+		<a href="<?php the_permalink(); ?>" class="grid_item">
+		    <figure>
+		        <?php the_post_thumbnail('thumbnail');?>
+		        <figcaption>
+		            <?php the_title(); ?>
+		            <?php the_excerpt(); ?>
+		        </figcaption>
+		    </figure>
+		    
+		</a>
+		
 	
 	<?php endwhile; ?>
 	<!-- end of the loop -->
-
-     </div>
+ </div>
 	<?php wp_reset_postdata(); ?>
 
 <?php else : ?>
@@ -63,7 +73,8 @@ $param = isset($_GET["dispfilter"]);
 </div>
     
 <?php get_sidebar(); ?>
-</div>
+   
+    </div><!-- End wrapper -->
 <div id="delimiter">
 </div>
 <?php get_footer(); ?>

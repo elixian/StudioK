@@ -1,0 +1,253 @@
+/*
+Theme Name: Forever
+Theme URI: https://wordpress.com/themes/forever/
+Description: The Forever theme makes it easy to wrap your wedding up in a neat little package with WordPress. You can show off every one of your best photos and highlight each important detail leading up to the big day and beyond.
+Version: 1.2.4
+Author: Automattic
+Author URI: https://wordpress.com/themes/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, white, silver, blue, two-columns, one-column, fixed-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, full-width-template
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+
+Throughout this document we'll be using percentages to define a fluid width wherever possible
+along with em and rem units for typography and vertical measurements
+(falling back to pixel measurements for browsers that don't support rem http://snook.ca/archives/html_and_css/font-size-with-rem)
+
+Visual elements, design, and inspiration for this theme have been taken from the Colorway theme http://wordpress.org/themes/colorway
+*/
+
+/* =Reset
+-------------------------------------------------------------- */
+
+@font-face {
+    font-family: banner-font;
+    src: url('../fonts/Billy Ohio.ttf');
+}
+
+body {text-align: center; margin:0; overflow-x:hidden;background-image: url(../images/background.png);background-repeat: repeat-x;
+}
+#wrapper { display: block; width:80%; margin:0px auto; }
+#content { width: 75%; float: left; margin: 15px 0 ; }
+#sidebar { width: 20%; float: right; margin: 15px ; }
+#delimiter { clear: both; }
+.title { font-size: 11pt; font-family: verdana; font-weight: bold; }
+
+
+#wrapper_layer-white{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    height: 100%;
+    left: 0px;
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 80%,rgba(255,255,255,0.9) 40%,rgba(255,255,255,0.4) 20%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 80%,rgba(255,255,255,0.9) 40%,rgba(255,255,255,0.4) 20%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,0.4) 20%,rgba(255,255,255,0.9) 40%,rgba(255,255,255,1) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+#header {
+    display: block;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+    #header h1{
+        font-family: banner-font;
+        margin-top: 5px;
+        font-size: 6em;
+        letter-spacing: 0.3em;
+        margin-bottom: 13px;
+    }
+    #header  p{
+         margin-right: 18px;
+        letter-spacing: 0.3em;
+    }
+    #header_title-ka{
+        font-family: Chiller,"Times New Roman", Georgia, Serif;
+        font-weight: bolder !important;
+        font-size: 1.0em;
+    }
+    
+    
+    #header #header-logo-img_right{
+        background: url(images/tree145.png) no-repeat right;
+        height: 150px;
+        width: 150px;
+        position: absolute;
+        top: 0px;
+        z-index: 15;
+        right: 0px;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+    
+    #header:after{
+    border-bottom: 2px solid black;
+    bottom:0px;
+    right:0;
+    position: absolute;
+    width:100%;
+    content:" ";
+  
+}
+
+#footer {
+    background: rgba(255,255,200,0.5);
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 5em;
+}
+
+
+/* = Grille affichage vignettes posts
+------------------------------------------ */
+#wrapper_grid{
+    display:flex;
+    flex-flow: row wrap;
+}
+
+#wrapper_grid figure img{
+    width:100%;
+    height: auto;
+    margin-bottom: 0.5vw;
+    transition: transform .2s ease-in-out;
+}
+
+.grid_item{
+
+  -ms-flex: auto;
+  flex: 0 0 auto;
+    width: 23%;
+    margin: .5vw;
+}
+
+.grid_item:hover img{
+
+transform: scale(1.05);
+}
+
+figcaption p{
+    font-family: "times new roman";
+    padding-top: 5px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+
+
+/* = Menu
+------------------------------------------- */
+/* Navigation */
+#nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav li {
+  font-family: 'Impact', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  text-align: left;
+}
+
+#nav a {
+  text-decoration: none;
+  display: block;
+  padding-left: 15px;
+  border-bottom: 1px solid #888;
+  transition: .3s background-color;
+}
+
+
+@media screen and (min-width: 650px) {
+  #nav li {
+    width: 142px;
+    border-bottom: none;
+    font-size: 1.4em;
+    display: inline-block;
+    margin-right: 6px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color:#fff;
+    box-shadow: 0px 1px 5px;
+  }
+
+  #nav a {
+    border-bottom: none;
+  }
+
+#nav  ul  li:before {
+     background-image: url(../images/clou.png);
+    background-repeat: no-repeat;
+    position: relative;
+    height: 11px;
+    content: "";
+    display: block;
+    width: 12px;
+
+}
+
+#nav  ul  li:after {
+    background-image: url(../images/clou.png);
+    background-repeat: no-repeat;
+    position: relative;
+    left: 126px;
+    top: -50px;
+    height: 11px;
+    content: "";
+    display: block;
+    width: 12px;
+
+}
+  
+  #nav > ul > li {
+    text-align: center;
+  }
+
+  #nav > ul > li > a {
+    padding-left: 0;
+  }
+
+  /* Sub Menus */
+  #nav li ul {
+    position: absolute;
+    display: none;
+    width: inherit;
+  }
+
+  #nav li:hover ul {
+    display: block;
+  }
+
+  #nav li ul li {
+    display: block;
+    font-size: 1em;
+  }
+  
+  #nav li ul li:before{
+      background-image: none;
+  }
+  
+  #nav li ul li:after{
+      background-image: none;
+  }
+}
