@@ -15,18 +15,18 @@ get_header(); ?>
 	
 	     <?php while ( have_posts() ) : the_post(); ?>
 		
-		
-     		<a href="<?php the_permalink(); ?>" class="grid_item">
-		    <figure>
-		        <?php the_post_thumbnail('thumbnail');?>
-		        <figcaption>
-		            <?php the_title(); ?>
-		            <?php the_excerpt(); ?>
-		        </figcaption>
-		    </figure>
-		    
-		</a>
-	
+		    <span class="grid_item">
+     		<a href="<?php the_permalink(); ?>" >
+    		    <figure>
+    		        <?php the_post_thumbnail('thumbnail');?>
+    		        <figcaption>
+    		            <?php the_title(); ?>
+    		            <?php the_excerpt(); ?>
+    		        </figcaption>
+    		    </figure>
+		    </a>
+		    <p><?php echo get_field('etat',get_the_ID()); ?></p>
+	        </span>
 	<?php endwhile; ?>
 	<!-- end of the loop -->
 

@@ -10,9 +10,7 @@ Posté le <?php the_date(); ?> dans <?php the_category(', '); ?> par <?php the_a
 <div class="post-content">
 <?php the_content(); ?>
 </div>
-<div class="post-comments">
-<?php comments_template(); ?>
-</div>
+
 </div>
 <?php endwhile; ?>
 <?php endif; ?>

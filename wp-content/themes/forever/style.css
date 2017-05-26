@@ -24,15 +24,22 @@ along with em and rem units for typography and vertical measurements
 Visual elements, design, and inspiration for this theme have been taken from the Colorway theme http://wordpress.org/themes/colorway
 */
 
+img.alignright { float: right; margin: 0 0 1em 1em; }
+img.alignleft { float: left; margin: 0 1em 1em 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
 /* =Reset
 -------------------------------------------------------------- */
 
 @font-face {
     font-family: banner-font;
-    src: url('../fonts/Billy Ohio.ttf');
+    src: url('fonts/Billy Ohio.ttf');
 }
 
-body {text-align: center; margin:0; overflow-x:hidden;background-image: url(../images/background.png);background-repeat: repeat-x;
+body {text-align: center; margin:0; overflow-x:hidden;background-image: url(images/background.png);background-repeat: repeat-x;
 }
 #wrapper { display: block; width:80%; margin:0px auto; }
 #content { width: 75%; float: left; margin: 30px 0 ; }
@@ -82,22 +89,6 @@ body {text-align: center; margin:0; overflow-x:hidden;background-image: url(../i
     }
     
     
-    #header #header-logo-img_right{
-        background: url(images/tree145.png) no-repeat right;
-        height: 150px;
-        width: 150px;
-        position: absolute;
-        top: 0px;
-        z-index: 15;
-        right: 0px;
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-    }
-    
     #header:after{
     border-bottom: 2px solid black;
     bottom:0px;
@@ -137,8 +128,12 @@ body {text-align: center; margin:0; overflow-x:hidden;background-image: url(../i
   flex: 0 0 auto;
     width: 23%;
     margin: .5vw;
+    
 }
 
+a.grid_item{
+  text-decoration: none;
+}
 .grid_item:hover img{
 
 transform: scale(1.05);
@@ -147,7 +142,6 @@ transform: scale(1.05);
 figcaption p{
     font-family: "times new roman";
     padding-top: 5px;
-    font-weight: bolder;
     font-style: italic;
 }
 
@@ -163,8 +157,9 @@ figcaption p{
 }
 
 #nav li {
-  font-family: 'Impact', sans-serif;
-  font-size: 1.2em;
+  font-family: 'Oswald', 'times new roman';
+  font-weight: 600;
+  font-size: 1em;
   line-height: 40px;
   text-align: left;
 }
@@ -178,11 +173,11 @@ figcaption p{
 
 @media screen and (min-width: 650px) {
   #nav li {
-    width: 142px;
+    width: 148px;
     border-bottom: none;
-    font-size: 1.4em;
+    font-size: 0.8em;
     display: inline-block;
-    margin-right: 6px;
+    margin-right: 4px;
     box-sizing: border-box;
     text-align: center;
     background-color:#fff;
@@ -202,7 +197,7 @@ figcaption p{
   }
 
 #nav  ul  li:before {
-     background-image: url(../images/clou.png);
+     background-image: url('images/clou.png');
     background-repeat: no-repeat;
     position: relative;
     height: 11px;
@@ -213,7 +208,7 @@ figcaption p{
 }
 
 #nav  ul  li:after {
-    background-image: url(../images/clou.png);
+    background-image: url('images/clou.png');
     background-repeat: no-repeat;
     position: relative;
     left: 126px;
@@ -248,9 +243,15 @@ figcaption p{
   #nav li ul li {
     display: block;
     font-size: 0.8em;
-    margin-top:15px;
+    top: 15px;
+    position: relative;
+    box-shadow: 0 0 0;
+    border-right: 1px solid black;
+border-left: 1px solid black;
   }
-  
+  #nav li ul li:last-child{
+    border-bottom:1px solid black;
+  }
   #nav li ul li:before{
       background-image: none;
   }
