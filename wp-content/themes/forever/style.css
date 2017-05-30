@@ -110,153 +110,94 @@ body {text-align: center; margin:0; overflow-x:hidden;background-image: url(imag
 
 /* = Grille affichage vignettes posts
 ------------------------------------------ */
-#wrapper_grid{
-    display:flex;
-    flex-flow: row wrap;
+
+@media (min-width: 768px){
+    .content_top-marge{
+        margin-top: 1.3em;
+    }
 }
 
-#wrapper_grid figure img{
-    width:100%;
-    height: auto;
-    margin-bottom: 0.5vw;
+.attachment-thumbnail{
     transition: transform .2s ease-in-out;
 }
 
-.grid_item{
-
-  -ms-flex: auto;
-  flex: 0 0 auto;
-    width: 23%;
-    margin: .5vw;
-    
-}
-
-a.grid_item{
-  text-decoration: none;
-}
-.grid_item:hover img{
+.item_link-hover:hover .attachment-thumbnail{
 
 transform: scale(1.05);
 }
-
-figcaption p{
-    font-family: "times new roman";
-    padding-top: 5px;
-    font-style: italic;
-}
-
 
 
 /* = Menu
 ------------------------------------------- */
 /* Navigation */
-#nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#nav li {
-  font-family: 'Oswald', 'times new roman';
-  font-weight: 600;
-  font-size: 1em;
-  line-height: 40px;
-  text-align: left;
-}
-
-#nav a {
-  text-decoration: none;
-  display: block;
-  color:black;
-}
 
 
-@media screen and (min-width: 650px) {
-  #nav li {
-    width: 148px;
-    border-bottom: none;
-    font-size: 0.8em;
-    display: inline-block;
-    margin-right: 4px;
-    box-sizing: border-box;
-    text-align: center;
-    background-color:#fff;
-    box-shadow: 0px 1px 5px;
-    height:40px;
-     -webkit-transition: background-color .6s ease-in;
-    -moz-transition: background-color .6s ease-in;
+@media (min-width: 768px) {
+  .forever_nav_left:before , .forever_nav_right:after{
+    content:"°";
   }
-  #nav li:hover{
-      background-color: #006699;
-  }
-
-  #nav a {
-    border-bottom: none;
-    line-height: 14px;
+  
+    .forever_nav_left{
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:1500;
+      margin-left:5px;
+      text-shadow: 2px 2px 2px black; 
     
-  }
-
-#nav  ul  li:before {
-     background-image: url('images/clou.png');
-    background-repeat: no-repeat;
-    position: relative;
-    height: 11px;
-    content: "";
-    display: block;
-    width: 12px;
-
-}
-
-#nav  ul  li:after {
-    background-image: url('images/clou.png');
-    background-repeat: no-repeat;
-    position: relative;
-    left: 126px;
-    top: -25px;
-    height: 11px;
-    content: "";
-    display: block;
-    width: 12px;
-
-}
-  
-  #nav > ul > li {
-    text-align: center;
-  }
-
-  #nav > ul > li > a {
-    padding-left: 0;
-  }
-
-  /*=
-  -----------------Sub Menus */
-  #nav li ul {
-    position: absolute;
-    display: none;
-    width: inherit;
-  }
-
-  #nav li:hover ul {
-    display: block;
-  }
-
-  #nav li ul li {
-    display: block;
-    font-size: 0.8em;
-    top: 15px;
-    position: relative;
-    box-shadow: 0 0 0;
-    border-right: 1px solid black;
-border-left: 1px solid black;
-  }
-  #nav li ul li:last-child{
-    border-bottom:1px solid black;
-  }
-  #nav li ul li:before{
-      background-image: none;
-  }
-  
-  #nav li ul li:after{
-      background-image: none;
-  }
-}
+    }
+    .forever_nav_right{
+     position:absolute;
+      top:0;
+      right:0;
+      z-index:1500;
+      margin-right:5px;
+      text-shadow: -2px 2px 2px black; 
+    }
+    .navbar .navbar-nav {
+        display: inline-block;
+        float:none;
+        height:60px;
+        white-space:nowrap;
+        font-family: 'oswald','times new roman';
+        font-size: 1.2em;
+        font-weight: 600;
+        margin:0;
+    }
+        
+        .navbar  {
+            text-align: center;
+        }
+        
+         ul.nav > li{
+            font-size: 0.8em;
+            border:1px solid black;
+            box-shadow:0px 3px 5px;
+            margin-right:30px;
+            width:150px;
+            height:45px;
+            padding:0px;
+            text-align:center;
+            background-color:#fff;
+            -webkit-transition: background-color .6s ease-in;
+            -moz-transition: background-color .6s ease-in;
+            -o-transition: background-color .6s ease-in;
+        }
+        
+        .navbar-nav>li>a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            line-height: 10px;
+            color:#000;
+        }
+                
+    }
+    
+    /* Supprime le background-color de bootstrap */
+    .nav>li>a:focus, .nav>li>a:hover{
+       background-color: transparent;
+    }
+  .nav li:focus, .nav li:hover{
+      
+      background-color: #027bb7;
+    }

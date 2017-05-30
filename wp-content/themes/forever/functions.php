@@ -1,23 +1,20 @@
 <?php 
 
+define("FOREVER_VERSION","1.0.0");
 
-function my_get_posts( $query ) {
- if ( is_home() )
- $query->set( 'post_type', array( 'produit' ) );
-
- return $query;
+function load_theme_forever(){
+    /* Ajoute le THumbnails pour tous les post */
+    add_theme_support( 'post-thumbnails' );
+    
+     /* Initialise le menu */
+     register_nav_menus( array(
+            'Top' => 'Navigation principale',
+        ) );
+    add_theme_support( 'menus' );
 }
 
-/* Ajoute le THumbnails pour tous les post */
- add_theme_support( 'post-thumbnails' );
- 
- /* Initialise le menu */
- register_nav_menus( array(
-        'Top' => 'Navigation principale',
-    ) );
+ add_action( 'after_setup_theme', 'load_theme_forever' ); 
 
-
-    add_theme_support( 'menus' );
 function has_children() {
 	global $post;
 	$children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
@@ -34,8 +31,11 @@ function is_child() {
 -------------------------------------------------------------- */
 function gkp_insert_css_in_head() {
     // On ajoute le css general du theme
-    wp_enqueue_style('forever-style', get_stylesheet_uri(),'',"1.0.0");
-     wp_enqueue_style( 'forever-reset', get_template_directory_uri() . '/styles/reset.css','',"1.0.0" );
+    
+    wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, NULL, 'all' );
+    wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), NULL, false );
+    wp_enqueue_style('forever-style', get_stylesheet_uri(),array('bootstrap_css'),FOREVER_VERSION);
+     //wp_enqueue_style( 'forever-reset', get_template_directory_uri() . '/styles/reset.css','',FOREVER_VERSION );
 
 }
 
@@ -80,4 +80,14 @@ if (isset($_GET['activated']) && is_admin()){
                 }
         }
 }
+?>
+
+
+<?php if ( function_exists('register_sidebar') )
+register_sidebar(array('name'=>'Sidebar',
+'before_widget' => '<div>',
+'after_widget' => '</div>',
+'before_title' => '<h3>',
+'after_title' => '</h3>',
+));
 ?>
