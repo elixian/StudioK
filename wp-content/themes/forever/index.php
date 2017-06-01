@@ -19,11 +19,13 @@
 
 <?php 
 /* On récupère le paramètre afin d'afficher la bonne vue */
+
 $param = isset($_GET["dispfilter"]); ?>
 <?php get_header(); ?>
-<div class="container">
+<div class="container content_top-marge">
+	<a id="setOverLay" href="#">test overlay</a>
 		<div class="row">
-		     <div class="col-lg-9 content_top-marge">
+		     <div class="col-lg-9 ">
 		
 					<?php if(!$param):?>
 				    	<?php get_template_part( 'inc/get_all_categories' ); ?>

@@ -29,17 +29,19 @@ function is_child() {
 
 /* = Ajout des Scripts CSS et JS 
 -------------------------------------------------------------- */
+
+add_action('wp_enqueue_scripts', 'gkp_insert_css_in_head');
 function gkp_insert_css_in_head() {
     // On ajoute le css general du theme
-    
-    wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, NULL, 'all' );
-    wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), NULL, false );
-    wp_enqueue_style('forever-style', get_stylesheet_uri(),array('bootstrap_css'),FOREVER_VERSION);
+    wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, FOREVER_VERSION, 'all' );
+     wp_enqueue_style('forever-style', get_stylesheet_uri(),array('bootstrap_css'),FOREVER_VERSION);
+    wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), FOREVER_VERSION, false );
+    wp_enqueue_script( 'forever-js', get_template_directory_uri() . '/js/forever.js', array(), FOREVER_VERSION, false );
+   
      //wp_enqueue_style( 'forever-reset', get_template_directory_uri() . '/styles/reset.css','',FOREVER_VERSION );
 
 }
 
-add_action('wp_enqueue_scripts', 'gkp_insert_css_in_head');
 
 function forever_enque_font(){
     wp_enqueue_style('forever-font-oswald','https://fonts.googleapis.com/css?family=Oswald',false);
