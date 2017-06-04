@@ -1,19 +1,38 @@
 <?php 
-
+include ("init/generate_menu.php");
 define("FOREVER_VERSION","1.0.0");
 
-function load_theme_forever(){
-    /* Ajoute le THumbnails pour tous les post */
-    add_theme_support( 'post-thumbnails' );
-    
-     /* Initialise le menu */
-     register_nav_menus( array(
-            'Top' => 'Navigation principale',
-        ) );
-    add_theme_support( 'menus' );
-}
 
- add_action( 'after_setup_theme', 'load_theme_forever' ); 
+ 
+forever_menu_init();
+
+
+if(!function_exists('load_theme_forever')){
+    function load_theme_forever(){
+       
+        /* Ajoute le THumbnails pour tous les post */
+        add_theme_support( 'post-thumbnails' );
+        
+         /* Initialise le menu */
+          add_theme_support( 'menus' );
+         /*register_nav_menus( array(
+                'Top' => 'Navigation studioKa',
+            ) );*/
+
+           
+        remove_action('wp_head', 'rsd_link');
+        remove_action('wp_head', 'wp_generator');
+        remove_action('wp_head', 'feed_links', 2);
+        remove_action('wp_head', 'index_rel_link');
+        remove_action('wp_head', 'wlwmanifest_link');
+        remove_action('wp_head', 'feed_links_extra', 3);
+        remove_action('wp_head', 'start_post_rel_link', 10, 0);
+        remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+        remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+    }
+}
+     add_action( 'after_setup_theme', 'load_theme_forever' ); 
+
 
 function has_children() {
 	global $post;
@@ -33,6 +52,11 @@ function is_child() {
 add_action('wp_enqueue_scripts', 'gkp_insert_css_in_head');
 function gkp_insert_css_in_head() {
     // On ajoute le css general du theme
+    if (!is_admin()) {
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false);
+	wp_enqueue_script('jquery');
+}
     wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, FOREVER_VERSION, 'all' );
      wp_enqueue_style('forever-style', get_stylesheet_uri(),array('bootstrap_css'),FOREVER_VERSION);
     wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), FOREVER_VERSION, false );
