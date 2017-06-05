@@ -3,7 +3,6 @@
 *fonction pour la génération du menu
 *
 */
-
  ?>
 
  <?php 
@@ -51,13 +50,13 @@ function forever_menu_init(){
         wp_update_nav_menu_item($menu_id, 0, array(
             'menu-item-title' =>  __('Scrapbooking'),
             'menu-item-classes' => 'groups',
-            'menu-item-url' => home_url( '/groups/' ), 
+            'menu-item-url' => get_category_link(get_category_by_slug('scrapbooking')->term_id),
             'menu-item-status' => 'publish'));
 
         wp_update_nav_menu_item($menu_id, 0, array(
             'menu-item-title' =>  __('Decoupage & Mixmedia'),
+            'menu-item-object-id' =>  get_category_by_slug( 'Decoupage & Mixmedia' )->term_id,
             'menu-item-classes' => 'forums',
-            'menu-item-url' => home_url( '/forums/' ), 
             'menu-item-status' => 'publish'));
 
         // Grab the theme locations and assign our newly-created menu

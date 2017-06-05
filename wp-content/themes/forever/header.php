@@ -22,9 +22,22 @@
 <?php wp_head(); ?>
 </head>
 <body>
+
     <div id="wrapper_layer-white">
-      <?php echo FrmFormsController::show_form(3, $key = '', $title=true, $description=true); ?>
-      <span id="contact-icon" ></span>
+
+      <?php/* echo FrmFormsController::show_form(3, $key = '', $title=true, $description=true); */?>
+      <div id="myModal" class="modal fade" role="dialog">
+      <span id="cross-close" class="btn" data-dismiss="modal"></span>
+        <div class="modal-dialog">  
+            <div class="modal-content">
+                
+                <div class="modal-body">
+                 <?php echo do_shortcode("[formidable id=3]" ); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+      <span id="contact-icon" class="btn btn-lg" data-toggle="modal" data-target="#myModal" ></span>
                 <div id="header">
       
                     
