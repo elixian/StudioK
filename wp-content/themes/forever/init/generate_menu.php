@@ -13,9 +13,9 @@ function forever_menu_init(){
 	$location = 'header-menu';
 	register_nav_menu( $location,__( 'Header Menu' ));
     $menuname = 'Studio ka';
-    if(! has_nav_menu( $location )){
+    //if(! has_nav_menu( $location )){
     	wp_delete_nav_menu($menuname);
-	}
+//	}
     
     // Does the menu exist already?
 
@@ -38,6 +38,7 @@ function forever_menu_init(){
         	'menu-item-object' => 'page',
             'menu-item-title' =>  __('O Mnie'),
             'menu-item-classes' => 'activity',
+            'menu-item-object-id' => get_page_by_title('O Mnie')->ID,
             'menu-item-type'      => 'post_type',
             'menu-item-status' => 'publish'));
 

@@ -12,13 +12,6 @@ if(!function_exists('load_theme_forever')){
        
         /* Ajoute le THumbnails pour tous les post */
         add_theme_support( 'post-thumbnails' );
-        
-         /* Initialise le menu */
-          add_theme_support( 'menus' );
-         /*register_nav_menus( array(
-                'Top' => 'Navigation studioKa',
-            ) );*/
-
            
         remove_action('wp_head', 'rsd_link');
         remove_action('wp_head', 'wp_generator');
