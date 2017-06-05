@@ -12,13 +12,6 @@ if(!function_exists('load_theme_forever')){
        
         /* Ajoute le THumbnails pour tous les post */
         add_theme_support( 'post-thumbnails' );
-        
-         /* Initialise le menu */
-          add_theme_support( 'menus' );
-         /*register_nav_menus( array(
-                'Top' => 'Navigation studioKa',
-            ) );*/
-
            
         remove_action('wp_head', 'rsd_link');
         remove_action('wp_head', 'wp_generator');
@@ -35,14 +28,14 @@ if(!function_exists('load_theme_forever')){
 
 
 function has_children() {
-	global $post;
-	$children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
-	return ($children) ? true : false;
+    global $post;
+    $children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
+    return ($children) ? true : false;
 }
 
 function is_child() {
-	global $post;
-	return ($post->post_parent) ? true : false;
+    global $post;
+    return ($post->post_parent) ? true : false;
 }
 
 
@@ -53,9 +46,9 @@ add_action('wp_enqueue_scripts', 'gkp_insert_css_in_head');
 function gkp_insert_css_in_head() {
     // On ajoute le css general du theme
     if (!is_admin()) {
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false);
-	wp_enqueue_script('jquery');
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false);
+    wp_enqueue_script('jquery');
 }
     wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, FOREVER_VERSION, 'all' );
      wp_enqueue_style('forever-style', get_stylesheet_uri(),array('bootstrap_css'),FOREVER_VERSION);

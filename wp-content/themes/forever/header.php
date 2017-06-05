@@ -46,7 +46,8 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="forever-nav-collapse">
                            
-                                <?php wp_nav_menu( array(   'menu' => 'main',
+                                <?php wp_nav_menu( array(   'theme_location' => 'header-menu',
+                                                            'menu' => 'main',
                                                             'menu_class'=> "nav navbar-nav",
                                                             'before' => "<span class='forever_nav_left'></span>",
                                                             'after' => "<span class='forever_nav_right'></span>",
