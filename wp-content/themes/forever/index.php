@@ -23,7 +23,6 @@
 $param = isset($_GET["dispfilter"]); ?>
 <?php get_header(); ?>
 <div class="container content_top-marge">
-	<a id="setOverLay" href="#">test overlay</a>
 		<div class="row">
 		     <div class="col-lg-9 ">
 		

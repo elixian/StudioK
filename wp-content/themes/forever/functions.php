@@ -5,7 +5,7 @@ define("FOREVER_VERSION","1.0.0");
 
 
  
-forever_menu_init();
+
 
 
 if(!function_exists('load_theme_forever')){
@@ -23,12 +23,17 @@ if(!function_exists('load_theme_forever')){
         remove_action('wp_head', 'start_post_rel_link', 10, 0);
         remove_action('wp_head', 'parent_post_rel_link', 10, 0);
         remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
-
+        
+        
+        //Allow admin bar in back-end only admin and administrator
         if (!current_user_can('administrator') && !is_admin()) {
           show_admin_bar(false);
         }
-
+        
+        //Hide admin bar in front end
         add_filter('show_admin_bar', '__return_false');
+        
+        forever_menu_init();
     }
 }
      add_action( 'after_setup_theme', 'load_theme_forever' ); 
@@ -58,13 +63,15 @@ function gkp_insert_css_in_head() {
     wp_enqueue_script('jquery');
 }
     wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, FOREVER_VERSION, 'all' );
+   wp_enqueue_style( 'opentip_css', get_template_directory_uri() . '/bundles/qtip/jquery.qtip.min.css', false, FOREVER_VERSION, 'all' );
+    wp_enqueue_style( 'fontawesomme_css', get_template_directory_uri() . '/styles/fontawesome/css/font-awesome.min.css', false, FOREVER_VERSION, 'all' );
     wp_enqueue_style( 'bootstrapvalidator-css', get_template_directory_uri() . '/js/boostrapvalidator/css/bootstrapValidator.css', false, FOREVER_VERSION, 'all' );
      wp_enqueue_style('forever-style', get_stylesheet_uri(),array('bootstrap_css'),FOREVER_VERSION);
     wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), FOREVER_VERSION, false );
     wp_enqueue_script( 'forever-js', get_template_directory_uri() . '/js/forever.js', array(), FOREVER_VERSION, false );
-     wp_enqueue_script( 'bootstrapvalidator-js', get_template_directory_uri() . '/js/boostrapvalidator/js/bootstrapValidator.js', array(), FOREVER_VERSION, true );
+    wp_enqueue_script( 'opentip-js', get_template_directory_uri() . '/bundles/qtip/jquery.qtip.min.js', array('jquery'), FOREVER_VERSION, true );
    
-     //wp_enqueue_style( 'forever-reset', get_template_directory_uri() . '/styles/reset.css','',FOREVER_VERSION );
+   
 
 }
 
@@ -87,27 +94,34 @@ return 10;
 add_filter('excerpt_length', 'new_excerpt_length');
 
 
-
-if (isset($_GET['activated']) && is_admin()){
-        $new_page_title = 'PAGE TEST';
-        $new_page_content = 'This is the page content';
-        $new_page_template = ''; //ex. template-custom.php. Leave blank if you don't want a custom page template.
-        //don't change the code bellow, unless you know what you're doing
-        $page_check = get_page_by_title($new_page_title);
-        $new_page = array(
-                'post_type' => 'page',
-                'post_title' => $new_page_title,
-                'post_content' => $new_page_content,
-                'post_status' => 'publish',
-                'post_author' => 1,
-        );
-        if(!isset($page_check->ID)){
-                $new_page_id = wp_insert_post($new_page);
-                if(!empty($new_page_template)){
-                        update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
-                }
-        }
+function createPage(){
+    
+    static $hasEverRun;
+    print_r($hasEverRun);
+    if (isset($_GET['activated']) && is_admin()){
+            $new_page_title = 'PAGE TEST';
+            $new_page_content = 'This is the page content';
+            $new_page_template = ''; //ex. template-custom.php. Leave blank if you don't want a custom page template.
+            //don't change the code bellow, unless you know what you're doing
+            $page_check = get_page_by_title($new_page_title);
+            $new_page = array(
+                    'post_type' => 'page',
+                    'post_title' => $new_page_title,
+                    'post_content' => $new_page_content,
+                    'post_status' => 'publish',
+                    'post_author' => 1,
+            );
+            if(!isset($page_check->ID)){
+                    $new_page_id = wp_insert_post($new_page);
+                    if(!empty($new_page_template)){
+                            update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
+                    }
+            }
+    }
+    
+    $hasEverRun=true;
 }
+add_action("inti","createPage");
 ?>
 
 

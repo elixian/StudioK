@@ -25,14 +25,15 @@
 
     <div id="wrapper_layer-white">
 
-      <?php/* echo FrmFormsController::show_form(3, $key = '', $title=true, $description=true); */?>
-      <div id="myModal" class="modal fade" role="dialog">
+      
+      <div id="myModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
       <span id="cross-close" class="btn" data-dismiss="modal"></span>
         <div class="modal-dialog">  
             <div class="modal-content">
                 
                 <div class="modal-body">
-                 <?php echo do_shortcode("[formidable id=3]" ); ?>
+                    <?php echo FrmFormsController::show_form(3, $key = '', $title=true, $description=true); ?>
+                 <?php /*echo do_shortcode("[wpforms id=68]" ); */?>
                 </div>
             </div>
         </div>
