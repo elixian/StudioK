@@ -1,11 +1,85 @@
 <?php 
 include ("init/generate_menu.php");
-define("FOREVER_VERSION","1.0.0");
+/*
+*DEFINE FOREVER GLOBALS
+*/
+$FOREVER_GLOBALS = array();
+$FOREVER_GLOBALS["version"]="1.0.1";
+$FOREVER_GLOBALS["url"]= get_template_directory_uri();
 
 
 
- 
+// Register Custom Taxonomy
+function custom_taxonomy() {
 
+	$labels = array(
+		'name'                       => _x( 'Metody', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Metoda', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Metody', 'text_domain' ),
+		'all_items'                  => __( 'All Items', 'text_domain' ),
+		'search_items'               => __( 'Search Metoda', 'textdomain' ),
+		'all_items'                  => __( 'All Metoda', 'textdomain' ),
+		'parent_item'                => __( 'Parent Metoda', 'textdomain' ),
+		'parent_item_colon'          => __( 'Parent Metoda:', 'textdomain' ),
+		'edit_item'                  => __( 'Edit Metoda', 'textdomain' ),
+		'update_item'                => __( 'Update Metoda', 'textdomain' ),
+		'add_new_item'               => __( 'Add New Metoda', 'textdomain' ),
+		'new_item_name'              => __( 'New Metoda Name', 'textdomain' ),
+		'menu_name'                  => __( 'Metody', 'textdomain' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+		'query_var'                 => true,
+        'rewrite'                   => array( 'slug' => 'metoda' ),
+	);
+	register_taxonomy( 'metody', array( 'post' ), $args );
+  
+  
+}
+add_action( 'init', 'custom_taxonomy', 0 );
+
+
+
+
+  // 3. Add term "mosaic-home" to custom taxonomy "tiles_categories"
+    function example_insert_category() {
+        // if (isset($_GET['activated']) && is_admin()){
+              wp_insert_term(
+                'Craft',
+                'metody',
+                array(
+                  'description' => 'craft description',
+                  'slug'    => 'craft'
+                  )
+                );
+                
+                
+                wp_insert_term(
+                'Scrapbooking',
+                'metody',
+                array(
+                  'description' => 'Scrapbooking description',
+                  'slug'    => 'scrapbooking'
+                  )
+                );
+                
+                 wp_insert_term(
+                'Decoupage & Mixmedia',
+                'metody',
+                array(
+                  'description' => 'Decoupage & Mixmedia description',
+                  'slug'    => 'decoupage-mixmedia'
+                  )
+                );
+         //}
+      }
+    add_action('init','example_insert_category',0);
 
 
 if(!function_exists('load_theme_forever')){
@@ -32,23 +106,10 @@ if(!function_exists('load_theme_forever')){
         
         //Hide admin bar in front end
         add_filter('show_admin_bar', '__return_false');
-        
-        forever_menu_init();
     }
 }
      add_action( 'after_setup_theme', 'load_theme_forever' ); 
 
-
-function has_children() {
-    global $post;
-    $children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
-    return ($children) ? true : false;
-}
-
-function is_child() {
-    global $post;
-    return ($post->post_parent) ? true : false;
-}
 
 
 /* = Ajout des Scripts CSS et JS 
@@ -56,30 +117,25 @@ function is_child() {
 
 add_action('wp_enqueue_scripts', 'gkp_insert_css_in_head');
 function gkp_insert_css_in_head() {
-    // On ajoute le css general du theme
+    // On retire et on rajoute jquery
     if (!is_admin()) {
     wp_deregister_script('jquery');
     wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false);
     wp_enqueue_script('jquery');
-}
-    wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, FOREVER_VERSION, 'all' );
-   wp_enqueue_style( 'opentip_css', get_template_directory_uri() . '/bundles/qtip/jquery.qtip.min.css', false, FOREVER_VERSION, 'all' );
-    wp_enqueue_style( 'fontawesomme_css', get_template_directory_uri() . '/styles/fontawesome/css/font-awesome.min.css', false, FOREVER_VERSION, 'all' );
-    wp_enqueue_style( 'bootstrapvalidator-css', get_template_directory_uri() . '/js/boostrapvalidator/css/bootstrapValidator.css', false, FOREVER_VERSION, 'all' );
-     wp_enqueue_style('forever-style', get_stylesheet_uri(),array('bootstrap_css'),FOREVER_VERSION);
-    wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), FOREVER_VERSION, false );
-    wp_enqueue_script( 'forever-js', get_template_directory_uri() . '/js/forever.js', array(), FOREVER_VERSION, false );
-    wp_enqueue_script( 'opentip-js', get_template_directory_uri() . '/bundles/qtip/jquery.qtip.min.js', array('jquery'), FOREVER_VERSION, true );
-   
-   
-
-}
-
-
-function forever_enque_font(){
+    }
+    wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, $FOREVER_GLOBALS["version"], 'all' );
+    wp_enqueue_style( 'fontawesomme_css', $FOREVER_GLOBALS["url"] . '/styles/fontawesome/css/font-awesome.min.css', false, $FOREVER_GLOBALS["version"], 'all' );
     wp_enqueue_style('forever-font-oswald','https://fonts.googleapis.com/css?family=Oswald',false);
+    wp_enqueue_style('forever-style', get_stylesheet_uri(),array('bootstrap_css'),$FOREVER_GLOBALS["version"]);
+    wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), $FOREVER_GLOBALS["version"], false );
+    wp_enqueue_script( 'forever-js', $FOREVER_GLOBALS["url"] . '/js/forever.js', array(), $FOREVER_GLOBALS["version"], false );
+ 
+   
+   
+
 }
-add_action('wp_enqueue_scripts',forever_enque_font);
+
+
 /* = Retire la feuille de style embarquée !!
 ----------------------------------------------------------------*/
 function remove_admin_login_header() {
@@ -121,11 +177,13 @@ function createPage(){
     
     $hasEverRun=true;
 }
-add_action("inti","createPage");
-?>
+add_action("init","createPage");
 
+/*
+*Inclus les fichiers customs
+*/
 
-<?php if ( function_exists('register_sidebar') )
+ if ( function_exists('register_sidebar') )
 register_sidebar(array('name'=>'Sidebar',
 'before_widget' => '<div>',
 'after_widget' => '</div>',
