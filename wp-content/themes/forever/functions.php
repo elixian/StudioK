@@ -4,10 +4,18 @@ include ("init/generate_menu.php");
 *DEFINE FOREVER GLOBALS
 */
 $FOREVER_GLOBALS = array();
-$FOREVER_GLOBALS["version"]="1.0.1";
-$FOREVER_GLOBALS["url"]= get_template_directory_uri();
+define("VERSION", "1.0.2");
+$FOREVER_GLOBALS["version"] ="1.0.2";
+$FOREVER_GLOBALS["url"] = get_template_directory_uri();
 
 
+
+
+// function add_classes_on_li($classes, $item, $args) {
+//   $classes[] = 'drop-shadow lifted';
+//   return $classes;
+// }
+// add_filter('nav_menu_css_class','add_classes_on_li',1,3);
 
 // Register Custom Taxonomy
 function custom_taxonomy() {
@@ -123,12 +131,12 @@ function gkp_insert_css_in_head() {
     wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false);
     wp_enqueue_script('jquery');
     }
-    wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, $FOREVER_GLOBALS["version"], 'all' );
-    wp_enqueue_style( 'fontawesomme_css', $FOREVER_GLOBALS["url"] . '/styles/fontawesome/css/font-awesome.min.css', false, $FOREVER_GLOBALS["version"], 'all' );
+    wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, VERSION , 'all' );
+    wp_enqueue_style( 'fontawesomme_css',  get_template_directory_uri() . '/styles/fontawesome/css/font-awesome.min.css', false, VERSION, 'all' );
     wp_enqueue_style('forever-font-oswald','https://fonts.googleapis.com/css?family=Oswald',false);
     wp_enqueue_style('forever-style', get_stylesheet_uri(),array('bootstrap_css'),$FOREVER_GLOBALS["version"]);
-    wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), $FOREVER_GLOBALS["version"], false );
-    wp_enqueue_script( 'forever-js', $FOREVER_GLOBALS["url"] . '/js/forever.js', array(), $FOREVER_GLOBALS["version"], false );
+    wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), VERSION, false );
+    wp_enqueue_script( 'forever-js', get_template_directory_uri() . '/js/forever.js', array(), VERSION, false );
  
    
    

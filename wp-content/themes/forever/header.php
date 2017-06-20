@@ -62,8 +62,7 @@
                            
                                 <?php wp_nav_menu( array(   'theme_location' => 'header-menu',
                                                             'menu' => 'main',
-                                                            'menu_class'=> "nav navbar-nav",
-                                                            'before' => "<span class='forever_nav_left'></span>",
+                                                            'menu_class'=> "nav navbar-nav ",
                                                             'after' => "<span class='forever_nav_right'></span>",
                                                             'container' => false)); ?>
                 

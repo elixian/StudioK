@@ -8,5 +8,5 @@
 ?>
 
 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar') ){
-    get_search_form(true); }
+     }
     ?>

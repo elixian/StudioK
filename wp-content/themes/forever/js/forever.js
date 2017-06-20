@@ -9,45 +9,53 @@ forever.init = (function (){
 })() ;*/
 
 
+        /*
+        *      set Pollyfill ForEach
+        */
+        
+   Array.prototype.forEach= function(callback,thisArg){
+            if(typeof (callback) !== "function"){
+                new TypeError(callback + " is not a function!");
+            }
+            var _l = this.length;
+            for(var i = 0; i < _l; i++) {
+                 callback.call(thisArg, this[i], i, this)
+            }
+        }
+        
+
     jQuery(document).ready(function($) {
        
-        
-       $('#cross-close').click( function () {
-           
-                $("#wpforms-form-68")[0].reset();
-        });
-        
+          $('#cross-close').click( function (ev) {
+              debugger;
+               ev.preventDefault();
+                 $("#tooltip").children().unwrap();
+                 $("#form_contact2")[0].reset();
+               
+             
+             });
+       
+   
         forever.validateForm = (function(){
-            var inputs =  document.getElementById("form_contact2").getElementsByTagName("input");
-            var inputsReq = new Array();
-            for (var i = 0, c = inputs.length; i < c; i++) {
-               var styles =  window.getComputedStyle(inputs[i]);
-               if(styles.display !== 'none'){
-                   inputsReq.push($(inputs[i]))
-                   
-               }
-            }
-      
-                $.each(inputsReq,function(i){
-                     
-                          val($(this),i);
-                        
-                });  
-            
-            function val(elem,i){
-                    
-                    elem.blur(()=>{
+            var  val = function (elem){
+                        var parentEl = elem.parent().get(0).tagName;
                         if(elem.val()==""){
-                            elem.wrap("<span data-tooltip='"+elem.attr('data-reqmsg')+"'></span>");
+                           if (parentEl != "SPAN") {
+                               elem.wrap("<span id='tooltip'  data-tooltip='"+elem.attr('data-reqmsg')+"'></span>");
+                               setTimeout(function(){
+                                   $("#tooltip").addClass("tooltip-hide");
+                               },3000);
+                              
+                           }
+                           
                             elem.focus();
-                            console.log("out "+ i)
                         }
-                    })
+                    };
+
+            return{
                 
+                val:val
             }
-            
-           
-            
             
             function validateEmail(email) {
                   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -55,7 +63,15 @@ forever.init = (function (){
             }
         })();
         
-        forever.validateForm;
+        
+        
+        $("fieldset").focusin(function(evt){
+            $(evt.target).blur(function(){
+                evt.stopPropagation();
+              forever.validateForm.val($(evt.target)); 
+            });
+        });
+        
     });
     
    
