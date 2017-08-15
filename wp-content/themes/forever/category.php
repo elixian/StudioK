@@ -18,11 +18,18 @@
 			    		        <?php the_post_thumbnail('thumbnail');?>
 			    		        <figcaption>
 			    		            <?php the_title(); ?>
-			    		            <?php the_excerpt(); ?>
+			    		           
 			    		        </figcaption>
 			    		    </figure>
 			    		</a>
-		   		 		<p><?php echo get_field('etat',get_the_ID()); ?></p>
+		   		 		<?php
+		   		 			$field = get_field_object('etat',get_the_ID());
+		   		 			$value = $field['value'];
+							$label = $field['choices'][ $value ];
+						?>
+							<p class="icons <?php echo $value ?>" >
+								<?php echo $label ; ?>
+		   		 			</p>
 		     		</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>

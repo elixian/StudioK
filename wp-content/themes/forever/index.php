@@ -24,19 +24,21 @@ $param = isset($_GET["dispfilter"]); ?>
 <?php get_header(); ?>
 <div class="container content_top-marge">
 		<div class="row">
-		     <div class="col-lg-9 ">
 		
-					<?php if(!$param):?>
-				    	<?php get_template_part( 'inc/get_all_categories' ); ?>
-				 	<?php else: ?>
-					 	<?php get_template_part( 'inc/get_etat_article' ); ?>
-				
-				 	<?php endif ?>
-		     </div>
-	
-	    	<div class="col-lg-3">
-				<?php get_sidebar(); ?>
-			</div>
+			     <div class="col-lg-10 col-lg-offset-1 ">
+			
+						<?php if(!$param):?>
+					    	<?php get_template_part( 'inc/get_all_categories' ); ?>
+					 	<?php else: ?>
+						 	<?php get_template_part( 'inc/get_etat_article' ); ?>
+					
+					 	<?php endif ?>
+			     </div>
+		
+		  		<!--  	<div class="col-lg-3">-->
+				<!--	<?php get_sidebar(); ?>-->
+				<!--</div>-->
+		
 		</div>
    	</div><!-- End container -->
 <div id="delimiter">

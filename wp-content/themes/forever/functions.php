@@ -57,7 +57,7 @@ add_action( 'init', 'custom_taxonomy', 0 );
 
   // 3. Add term "mosaic-home" to custom taxonomy "tiles_categories"
     function example_insert_category() {
-        // if (isset($_GET['activated']) && is_admin()){
+         if (isset($_GET['activated']) && is_admin()){
               wp_insert_term(
                 'Craft',
                 'metody',
@@ -85,7 +85,7 @@ add_action( 'init', 'custom_taxonomy', 0 );
                   'slug'    => 'decoupage-mixmedia'
                   )
                 );
-         //}
+         }
       }
     add_action('init','example_insert_category',0);
 
@@ -186,6 +186,7 @@ function createPage(){
     $hasEverRun=true;
 }
 add_action("init","createPage");
+
 
 /*
 *Inclus les fichiers customs

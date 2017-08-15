@@ -10,7 +10,7 @@
 				    		        <?php the_post_thumbnail('thumbnail');?>
 				    		        <figcaption>
 				    		            <?php the_title(); ?>
-				    		            <?php the_excerpt(); ?>
+				    		          
 				    		        </figcaption>
 				    		    </figure>
 				    		</a>
