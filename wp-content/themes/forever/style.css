@@ -5,7 +5,7 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 Version: 3.0
 */
-
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans');
 @font-face {
     font-family: banner-font;
     src: url('fonts/Billy Ohio.ttf');
@@ -83,23 +83,57 @@ html{ overflow-x:hidden;overflow-y: auto;}
 /* 
 *  2 Grille affichage vignettes posts
 ------------------------------------------ */
+.item_link-hover figure{
+    
+    padding: 10px !important;
+    box-shadow: 0px 0px 5px lightgrey;
+    width: 220px;
+    height: 250px;
+    transition: all .5s ease-in-out;
+}
+
+.item_link-hover img{
+    will-change: transform;
+      transition: transform .5s ease-in-out;
+}
+.item_link-hover figcaption{
+    -webkit-font-smoothing: antialiased;
+    margin-top:2vh;
+}
 
 @media (min-width: 768px){
-    .content_top-marge{
-        margin-top: 5em;
-    }
+    
+.info-titre-category{
+    display:inline-block;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #484848;
+    transform: color .5s ease-in-out;
+
 }
+.content_top-marge{
+    margin-top: 5em;
+}
+
 .item_link-hover img{
     width:200px;
     height:200px;
 }
-.item_link-hover:hover img{
-    transition: transform .2s ease-in-out;
+
+.item_link-hover:hover figure{
+    box-shadow: 0px 0px 5px grey;
+   
 }
 
 .item_link-hover:hover img{
+     transform: scale(1.02) translate3d(0,0,0);
+}
 
-    transform: scale(1.05);
+.item_link-hover:hover ~ .info-titre-category{
+    color:orange;
 }
 
 .offset-bottom{
@@ -325,7 +359,9 @@ background: url(images/cancel-music.png) right top;
 /*
     7 ICONS
 ======================== */
-
+.icons{
+    margin-top:10px;
+}
 .icons::before{
      content:"\f0c8";
     font-family: FontAwesome;

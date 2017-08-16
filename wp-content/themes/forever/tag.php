@@ -11,7 +11,7 @@
 		     	<? /*debut de la boucle */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<div class="col-lg-3 col-md-3 col-xs-6">
-						<a href="<?php the_permalink(); ?>" >
+						<a href="<?php the_permalink(); ?>" class="item_link-hover" >
 			    		    <figure>
 			    		        <?php the_post_thumbnail('thumbnail');?>
 			    		        <figcaption>
@@ -20,7 +20,13 @@
 			    		        </figcaption>
 			    		    </figure>
 			    		</a>
-		   		 		<p><?php echo get_field('etat',get_the_ID()); ?></p>
+		   		 		<?php
+		   		 			$field = get_field_object('etat',get_the_ID());
+		   		 			$value = $field['value'];
+							$label = $field['choices'][ $value ];
+						?>
+							<p class="icons <?php echo $value ?>" >
+								<?php echo $la
 		     		</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>

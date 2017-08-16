@@ -26,11 +26,12 @@ $cats = get_categories();
             		<a href="<?php echo get_category_link( $cat->term_id); ?>" class="item_link-hover" >
             		    <figure>
             		        <?php the_post_thumbnail('medium');?>
-            		        <figcaption>
-            		            <?= $cat->name; ?>
-            		        </figcaption>
+            		        
             		    </figure>
             		</a>
+            		<span class="info-titre-category">
+    		            <?= $cat->name; ?>
+    		        </span>
                 </div>
         
         	<?php endwhile; ?>
