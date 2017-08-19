@@ -38,7 +38,10 @@
             </div>
         </div>
     </div>
+    <div id="contact-infos">
       <span id="contact-icon" class="btn btn-lg" data-toggle="modal" data-target="#myModal" ></span>
+      <span id="about-me"><a href="">About Me</a></span>
+    </div>
                 <div id="header">
       
                     

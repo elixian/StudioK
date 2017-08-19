@@ -8,10 +8,12 @@
  <?php 
 add_action('load-nav-menus.php', 'forever_menu_init',1);
 function forever_menu_init(){
-
+    static $called = false;
+    if (isset($called) && $called) {
+        return false;
+    }
         //initialisation du menu
-    $run_once = get_option('menu_check');
-    if(true){
+  
         	$location = 'header-menu';
         	register_nav_menu( $location,__( 'Header Menu' ));
             $menuname = 'Studio ka';
@@ -22,9 +24,7 @@ function forever_menu_init(){
             $menu_exists = wp_get_nav_menu_object( $menuname );
             // If it doesn't exist, let's create it.
          if( !$menu_exists){
-                
-          
-        
+
         	$menu_id = wp_create_nav_menu($menuname);
         
                 // Set up default BuddyPress links and add them to the menu.
@@ -69,9 +69,10 @@ function forever_menu_init(){
         	$locations[$location] = $menu_id;
         	set_theme_mod( 'nav_menu_locations', $locations );
         	
-        	     // then update the menu_check option to make sure this code only runs once
-        update_option('menu_check', true);
-    }
+             // then update the menu_check option to make sure this code only runs once
+            update_option('menu_check', true);
+            $called = true;
+    
 }
 
 

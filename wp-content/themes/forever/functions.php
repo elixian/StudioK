@@ -1,5 +1,5 @@
 <?php 
-include ("init/generate_menu.php");
+//include_once("init/generate_menu.php");
 /*
 *DEFINE FOREVER GLOBALS
 */
@@ -53,6 +53,19 @@ function custom_taxonomy() {
 add_action( 'init', 'custom_taxonomy', 0 );
 
 
+if ( function_exists('register_sidebar') )
+        register_sidebar(array(
+            'name' => 'Footer Widgets Right',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widgettitle">',
+            'after_title' => '</h2>',
+        ));
+
+
+
+$location = 'header-menu';
+register_nav_menu( $location,__( 'Header Menu' ));
 
 
   // 3. Add term "mosaic-home" to custom taxonomy "tiles_categories"

@@ -6,6 +6,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 Version: 3.0
 */
 @import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans');
 @font-face {
     font-family: banner-font;
     src: url('fonts/Billy Ohio.ttf');
@@ -24,128 +25,64 @@ html{ overflow-x:hidden;overflow-y: auto;}
 #sidebar { width: 20%; float: right; margin: 15px ; }
 #delimiter { clear: both; }
 .title { font-size: 11pt; font-family: verdana; font-weight: bold; }
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
 
 
 #header{
     display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { 
     
     
-#header {
-    display: block;
-    height: 150px;
-    overflow: hidden;
-    position: relative;
-    left: 0;
-    top: 0;
+    
 }
 
-    #header h1{
-        font-family: banner-font;
-        margin-top: 5px;
-        font-size: 6em;
-        letter-spacing: 0.3em;
-        margin-bottom: 13px;
+@media (min-width: 1200px) {
+
+
+    /* contenu de vignette */
+    .main-content{
+        min-height: 400px;
     }
-    #header  p{
-         margin-right: 18px;
-        letter-spacing: 0.3em;
-    }
-    #header_title-ka{
-        font-family: Chiller,"Times New Roman", Georgia, Serif;
-        font-weight: bolder !important;
-        font-size: 1.0em;
-    }
-    
-    
-    #header:after{
-        border-bottom: 2px solid black;
-        width: 80%;
-        margin: auto;
-        content: " ";
+
+    /****************
+        HEADER
+    *****************/
+    #header {
         display: block;
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+        left: 0;
+        top: 0;
     }
-
     
-}
-
-#footer {
-    background: rgba(255,255,200,0.5);
-    clear: both;
-    position: relative;
-    z-index: 10;
-    height: 5em;
-}
-
-
-/* 
-*  2 Grille affichage vignettes posts
------------------------------------------- */
-.item_link-hover figure{
+        #header h1{
+            font-family: banner-font;
+            margin-top: 5px;
+            font-size: 6em;
+            letter-spacing: 0.3em;
+            margin-bottom: 13px;
+        }
+        #header  p{
+             margin-right: 18px;
+            letter-spacing: 0.3em;
+        }
+        #header_title-ka{
+            font-family: Chiller,"Times New Roman", Georgia, Serif;
+            font-weight: bolder !important;
+            font-size: 1.0em;
+        }
     
-    padding: 10px !important;
-    box-shadow: 0px 0px 5px lightgrey;
-    width: 220px;
-    height: 250px;
-    transition: all .5s ease-in-out;
-}
-
-.item_link-hover img{
-    will-change: transform;
-      transition: transform .5s ease-in-out;
-}
-.item_link-hover figcaption{
-    -webkit-font-smoothing: antialiased;
-    margin-top:2vh;
-}
-
-@media (min-width: 768px){
-    
-.info-titre-category{
-    display:inline-block;
-    text-align: center;
-    margin-top: 10px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 1.1em;
-    color: #484848;
-    transform: color .5s ease-in-out;
-
-}
-.content_top-marge{
-    margin-top: 5em;
-}
-
-.item_link-hover img{
-    width:200px;
-    height:200px;
-}
-
-.item_link-hover:hover figure{
-    box-shadow: 0px 0px 5px grey;
-   
-}
-
-.item_link-hover:hover img{
-     transform: scale(1.02) translate3d(0,0,0);
-}
-
-.item_link-hover:hover ~ .info-titre-category{
-    color:orange;
-}
-
-.offset-bottom{
-    margin-bottom:3vh;
-}
-
-/* 
-*  3 Menu
-========================== */
-
-@media (min-width: 768px) {
-  .forever_nav_right:before,.forever_nav_right:after{
+     .forever_nav_right:before,.forever_nav_right:after{
     content:"°";
   }
   .forever_nav_right:before{
@@ -172,19 +109,17 @@ html{ overflow-x:hidden;overflow-y: auto;}
         margin-top: -6px;
     }
     .navbar .navbar-nav {
-        display: block;
+       text-align: center;
         float:none !important;
         height: 60px;
         white-space: nowrap;
         font-family: 'oswald','times new roman';
         font-weight: 600;
-        width: 80%;
         margin: auto;
     }
 
          ul.nav > li{
             font-size: 0.8em;
-            border:1px solid black;
             box-shadow:0px 3px 10px;
             width:171px;
             height:45px;
@@ -211,18 +146,92 @@ html{ overflow-x:hidden;overflow-y: auto;}
                 display:block;
                 width:100%;
                 height:100%;
+                 -webkit-transition: color .6s ease-in;
+            -moz-transition: color .6s ease-in;
+            -o-transition: color .6s ease-in;
             }
-                
-    }
-    
-    /* Supprime le background-color de bootstrap */
+            
+               /* Supprime le background-color de bootstrap */
     .nav>li>a:focus, .nav>li>a:hover{
+        color:#ffb400;
        background-color: transparent;
     }
   .nav li:focus, .nav li:hover{
       
-      background-color: #027bb7;
+      background-color: #e4e1dc;
     }
+    
+    /**************************************** 
+      2 Grille affichage vignettes posts
+    ***************************************** */
+    .info-titre-category{
+        display:inline-block;
+        text-align: center;
+        margin-top: 10px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 1.1em;
+        color: #484848;
+        transform: color .5s ease-in-out;
+
+    }
+    .item_link-hover figure{
+    
+    padding: 10px !important;
+    box-shadow: 0px 0px 5px lightgrey;
+    width: 220px;
+    height: 250px;
+    transition: all .5s ease-in-out;
+    }
+
+    .item_link-hover figcaption{
+        -webkit-font-smoothing: antialiased;
+        margin-top:2vh;
+    }
+    .content_top-marge{
+        margin-top: 5em;
+    }
+
+    .item_link-hover img{
+        border:1px solid transparent;
+        will-change: transform;
+        transition: transform .5s ease-in-out;
+        width:200px;
+        height:200px;
+        transition: transform 0.4s linear;
+    }
+
+    .item_link-hover:hover figure{
+        box-shadow: 0px 0px 5px grey;
+       
+    }
+
+    .item_link-hover:hover img{
+         transform: scale(1.02) ;
+    }
+
+    .item_link-hover:hover ~ .info-titre-category{
+        color:orange;
+    }
+    
+    .offset-bottom{
+        margin-bottom:3vh;
+    }
+
+    
+}
+
+#footer {
+    background: rgba(255,255,200,0.5);
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 5em;
+}
+
+
+
+ 
 
     
 
@@ -242,11 +251,21 @@ html{ overflow-x:hidden;overflow-y: auto;}
     z-index: 4;
 }
 
-
-#contact-icon::before{
+#contact-infos{
     position: absolute;
     top: 0;
-    right: 10vw;
+    right: 10px;
+    z-index:4;
+}
+
+#contact-infos #about-me a{
+    text-decoration: none;
+    color: black;
+    font-family: inherit;
+    font-size: 1.2em;
+
+}
+#contact-icon::before{
     cursor: pointer;
     z-index: 3;
     font-family: FontAwesome;
@@ -356,6 +375,10 @@ background: url(images/cancel-music.png) right top;
 
 }
 
+#social-links a{
+    font-size:2.1em;
+    text-decoration: none;
+}
 /*
     7 ICONS
 ======================== */
@@ -385,4 +408,9 @@ background: url(images/cancel-music.png) right top;
 
 .state_oncommand::before{
     color:#ffbd00;
+}
+
+.float-left-img{
+    float:left;
+    margin-right:1.2em;
 }
