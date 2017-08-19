@@ -7,9 +7,9 @@
  ?> 
 
 <?php get_header(); ?>
-<div class="container">
+<div class="container  content_top-marge main-content-min-height">
 		<div class="row">
-		     <div class="col-lg-10 col-lg-offset-1 content_top-marge">
+		     <div class="col-lg-10 col-lg-offset-1 ">
 		     	<? /*debut de la boucle */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<div class="col-lg-3 col-md-3 col-xs-6">
