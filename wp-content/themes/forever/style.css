@@ -44,8 +44,30 @@ select:-moz-focusring {
     display: none;
 }
 
+#banner-md{
+    font-family: banner-font;
+    display:none;
+    float:left;
+}
+
+#info-msg-success{
+    display: none;
+    border:1px solid green;
+    position:relative;
+    top:25%;
+    background:green;
+    width:150px;
+    height:150px;
+}
+
+#pirate-forms-captcha{
+    display:block;
+}
 
 @media (min-width: 768px) and (max-width: 1074px) { 
+    #banner-md{
+        display:inline-block;
+    }
     .main-content-min-height{
             min-height:67vh;
     }
@@ -549,64 +571,13 @@ background: url(images/cancel-music.png) right top;
 
 /* 5 Tooltip formulaire
 ========================== */
-/* Add this attribute to the element that needs a tooltip */
-[data-tooltip] {
-  position: relative;
-  z-index: 2;
-  cursor: pointer;
+.modal-content{    height:74vh;
 }
 
-/* Hide the tooltip content by default */
-[data-tooltip]:before,
-[data-tooltip]:after {
- 
-  pointer-events: none;
+textarea.form-control {
+    height: auto;
+    min-height: 31vh;
 }
-
-/* Position tooltip above the element */
-[data-tooltip]:before {
-  position: absolute;
-  bottom: 150%;
-  left: 50%;
-  margin-bottom: 5px;
-  margin-left: -80px;
-  padding: 7px;
-  width: 160px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #000;
-  background-color: hsla(0, 0%, 20%, 0.9);
-  color: #fff;
-  content: attr(data-tooltip);
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.2;
-}
-
-/* Triangle hack to make tooltip look like a speech bubble */
-[data-tooltip]:after {
-  position: absolute;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -5px;
-  width: 0;
-  border-top: 5px solid #000;
-  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-  content: " ";
-  font-size: 0;
-  line-height: 0;
-}
-.tooltip-hide:after, .tooltip-hide:before{
-    opacity:0;
-}
-
-.tooltip-hide:hover:after, .tooltip-hide:hover:before{
-    opacity:1;
-}
-
 /* 
 * 6  FOOTER
  =======================*/
@@ -663,3 +634,18 @@ background: url(images/cancel-music.png) right top;
     float:left;
     margin-right:1.2em;
 }
+
+
+/* 
+Gestion des images pour les galeries
+*/
+
+dl dt img {
+    max-height: 206px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 
+    FORM
+ **************/

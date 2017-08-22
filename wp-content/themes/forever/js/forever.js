@@ -13,7 +13,7 @@ forever.init = (function (){
         *      set Pollyfill ForEach
         */
         
-   Array.prototype.forEach= function(callback,thisArg){
+  Array.prototype.forEach= function(callback,thisArg){
             if(typeof (callback) !== "function"){
                 new TypeError(callback + " is not a function!");
             }
@@ -25,53 +25,32 @@ forever.init = (function (){
         
 
     jQuery(document).ready(function($) {
+        
+        
        
           $('#cross-close').click( function (ev) {
-              debugger;
-               ev.preventDefault();
-                 $("#tooltip").children().unwrap();
-                 $("#form_contact2")[0].reset();
-               
+              
+              ev.preventDefault();
+                var form = document.getElementsByTagName('form');
+                form[0].reset();
              
              });
-       
-   
-        forever.validateForm = (function(){
-            var  val = function (elem){
-                        var parentEl = elem.parent().get(0).tagName;
-                        if(elem.val()==""){
-                           if (parentEl != "SPAN") {
-                               elem.wrap("<span id='tooltip'  data-tooltip='"+elem.attr('data-reqmsg')+"'></span>");
-                               setTimeout(function(){
-                                   $("#tooltip").addClass("tooltip-hide");
-                               },3000);
-                              
-                           }
-                           
-                            elem.focus();
-                        }
-                    };
 
-            return{
+            var btn_sub = document.getElementById('pirate-forms-contact-submit');
+            btn_sub.addEventListener('click',function(){
+                var input_check= document.getElementsByClassName('form-control');
+               var arrayNode=  Array.prototype.slice.call(input_check);
+               arrayNode.forEach(function(node_input){
+                  if(node_input.value == ""){
+                    node_input.style.border= '1px solid red';
+                    node_input.style.boxShadow= ' 0px 1px 1px #f86f6f,1px 0px 1px #f86f6f';
+                }else{
+                    
+                }
+               });
                 
-                val:val
-            }
-            
-            function validateEmail(email) {
-                  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                  return re.test(email);
-            }
-        })();
-        
-        
-        
-        $("fieldset").focusin(function(evt){
-            $(evt.target).blur(function(){
-                evt.stopPropagation();
-              forever.validateForm.val($(evt.target)); 
+               
             });
-        });
         
     });
     
-   

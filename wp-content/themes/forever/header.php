@@ -32,8 +32,8 @@
             <div class="modal-content">
                 
                 <div class="modal-body">
-                    <?php echo FrmFormsController::show_form(3, $key = '', $title=true, $description=true); ?>
-                 <?php /*echo do_shortcode("[wpforms id=68]" ); */?>
+                    <!--<?php //echo FrmFormsController::show_form(3, $key = '', $title=true, $description=true); ?>-->
+                 <?php echo do_shortcode('[pirate_forms]')?>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="forever-nav-collapse">
-                           
+                           <div id="banner-md">Studio KA <p>handmade amp; creativity</p></div>
                                 <?php wp_nav_menu( array(   'theme_location' => 'header-menu',
                                                             'menu' => 'main',
                                                             'menu_class'=> "nav navbar-nav ",
