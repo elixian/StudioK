@@ -571,7 +571,79 @@ background: url(images/cancel-music.png) right top;
 
 /* 5 Tooltip formulaire
 ========================== */
-.modal-content{    height:74vh;
+
+#title-form{
+    font-weight:bold;
+    font-size:2em;
+}
+#title-form p{
+    color:red;
+    font-size: initial;
+    
+}
+#mail-infos{
+    width:190px;
+    height: 80px;
+    position:fixed;
+    left:-198px;
+       background-color: rgb(255, 249, 173);
+    
+}
+
+#mail-infos p{
+    line-height:0.8em;
+    margin-left: 25px;
+}
+.active-infos-error{
+     border:2px solid red;
+    -webkit-animation-name: slideInfo; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 2; /* Safari 4.0 - 8.0 */
+    -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+    animation-name: slideInfo;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate; 
+}
+.active-infos-error::before{
+    content: "\f00d";
+    font-family: 'fontAwesome';
+    position: absolute;
+    top: 31px;
+    left: 5px;
+    color: red;
+    font-weight: 800;
+    font-size: 1.4em;
+}
+.active-infos-success{
+ 
+    border:2px solid green;
+    -webkit-animation-name: slideInfo; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 2; /* Safari 4.0 - 8.0 */
+    -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+    animation-name: slideInfo;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate; 
+}
+.active-infos-success::before{
+    content: "\f00c";
+    font-family: 'fontAwesome';
+    position: absolute;
+    top: 31px;
+    left: 5px;
+    color: green;
+    font-weight: 800;
+    font-size: 1.2em;
+}
+@-webkit-keyframes slideInfo {
+    0%   {left:-198px;}
+    80%   {left:0px;}
+    100% {left:0px;}
+}
+.modal-content{    
+    height:84vh;
 }
 
 textarea.form-control {

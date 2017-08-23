@@ -22,9 +22,6 @@
 <?php wp_head(); ?>
 </head>
 <body>
-
-    <div id="wrapper_layer-white">
-
       
       <div id="myModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
       <span id="cross-close" class="btn" data-dismiss="modal"></span>
@@ -73,3 +70,6 @@
                         </div>
                     </div>
                 </nav>
+                <div id="mail-infos">
+                    <h4>Email info</h4>
+                </div>
