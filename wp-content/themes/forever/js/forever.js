@@ -25,36 +25,36 @@ forever.init = (function (){
         
 
     jQuery(document).ready(function($) {
-        debugger;
-
-            var formDoM= document.getElementsByTagName('FORM');
-            var divNode = document.createElement('DIV');
-            divNode.setAttribute('id',"title-form");
-            var pNode   = document.createElement('p');
-            var pInnerText = document.createTextNode("Please check you'r mail for confirmation")
-            pNode.appendChild(pInnerText);
-            var innerText = document.createTextNode("Email Ordering");
-            divNode.appendChild(innerText);
-           divNode.appendChild(pNode);
-            formDoM[0].insertBefore(divNode,formDoM[0].firstChild);
-
+        
+        var initDOMForm = function(){
+                                var tilteId = document.getElementById('title-form');
+                                if(tilteId === null){
+                                    var formDoM= document.getElementsByTagName('FORM');
+                                    var divNode = document.createElement('DIV');
+                                    divNode.setAttribute('id',"title-form");
+                                    var pNode   = document.createElement('p');
+                                    var pInnerText = document.createTextNode("Please check you'r mail for confirmation");
+                                    pNode.appendChild(pInnerText);
+                                    var innerText = document.createTextNode("Email Ordering");
+                                    divNode.appendChild(innerText);
+                                    divNode.appendChild(pNode);
+                                    formDoM[0].insertBefore(divNode,formDoM[0].firstChild);
+                                }
+                         };
        
-          $('#cross-close').click( function (ev) {
-              
-              ev.preventDefault();
+            $('#cross-close').click( function (ev) {
+                 ev.preventDefault();
                 var form = document.getElementsByTagName('form');
-
                 form[0].reset();
              
              });
 
             var btn_sub = document.getElementById('pirate-forms-contact-submit');
             btn_sub.addEventListener('click',function(){
-                    var input_check= document.getElementsByClassName('form-control');
-                    var arrayNode=  Array.prototype.slice.call(input_check);
-                   arrayNode.forEach(function(node_input){
-                       console.log(regWhiteSpace(node_input.value));
-                      if(! regWhiteSpace(node_input.value)){
+                var input_check= document.getElementsByClassName('form-control');
+                var arrayNode=  Array.prototype.slice.call(input_check);
+                arrayNode.forEach(function(node_input){
+                    if(! regWhiteSpace(node_input.value)){
                         node_input.style.border= '1px solid #f86f6f';
                         node_input.style.boxShadow= '0px 1px 1px #f86f6f,1px 0px 1px #f86f6f,-1px 0px #f86f6f,0px -1px #f86f6f' ;
                         node_input.addEventListener('keyup',function(){
@@ -62,12 +62,9 @@ forever.init = (function (){
                                 node_input.style.boxShadow="none";
                                 this.style.border ="1px solid #ccc";
                             }
-                           
-                        })
-                        }else{
-                        
-                        }
-                   });
+                        });
+                    }
+                });
             });
         
         function regWhiteSpace(str){
@@ -82,8 +79,7 @@ forever.init = (function (){
         */
         
         function getDispInfo(callback) { 
-            setTimeout(function setTimeoutCB(counter) { // callback asynchrone 
-                console.log('launch display info'); 
+            setTimeout(function () { // callback asynchrone 
                 callback(null);
             }, 500); 
         } 
@@ -98,7 +94,11 @@ forever.init = (function (){
                  arrayNode.forEach(function(currentNode){
                      mailInfos.innerHTML += currentNode.innerHTML;
                      setTimeout(function(){
-                         mailInfos.className="";
+                         let activeInfo = document.getElementById('mail-infos'),
+                            valueClass = activeInfo.classList.value;
+                            if(valueClass !=""){
+                                activeInfo.classList.remove(valueClass);
+                            }
                      },10000);
                  });
              }else{
@@ -114,6 +114,6 @@ forever.init = (function (){
              }
         });
         
-       // initTitleForm();
+       initDOMForm();
     });
     
