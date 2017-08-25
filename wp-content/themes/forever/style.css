@@ -25,7 +25,7 @@ html{ overflow-x:hidden;overflow-y: auto;}
 #sidebar { width: 20%; float: right; margin: 15px ; }
 #delimiter { clear: both; }
 .title { font-size: 11pt; font-family: verdana; font-weight: bold; }
-.size-auto, 
+.size-auto,
 .size-full,
 .size-large,
 .size-medium,
@@ -64,7 +64,7 @@ select:-moz-focusring {
     display:block;
 }
 
-@media (min-width: 768px) and (max-width: 1074px) { 
+@media (min-width: 768px) and (max-width: 1074px) {
     #banner-md{
         display:inline-block;
     }
@@ -79,13 +79,13 @@ select:-moz-focusring {
         font-family: 'oswald','times new roman';
         background-color:transparent !important;
     }
-    
+
     .navbar-nav  li:first-child  a:before{
         content:"\f015";
         padding-right:10px;
         font-family:"FontAwesome";
     }
-     /**************************************** 
+     /****************************************
       2 Grille affichage vignettes posts
     ***************************************** */
     .info-titre-category{
@@ -134,15 +134,15 @@ select:-moz-focusring {
     .offset-bottom{
         margin-bottom:3vh;
     }
-    
+
 }
 @media  (min-width: 1075px){
-    
+
     /* contenu de vignette */
     .main-content-min-height{
             min-height:35vh;
     }
-    
+
     .navbar {
         background-color: none;
     }
@@ -157,7 +157,7 @@ select:-moz-focusring {
         left: 0;
         top: 0;
     }
-    
+
         #header h1{
             font-family: banner-font;
             margin-top: 5px;
@@ -174,11 +174,11 @@ select:-moz-focusring {
             font-weight: bolder !important;
             font-size: 1.0em;
         }
-        
+
 /*********************
     1 NAVIGATION QUERY 1075
 ****************************/
-    
+
 .forever_nav_right:before,.forever_nav_right:after{
     content:"°";
   }
@@ -188,7 +188,7 @@ select:-moz-focusring {
       left:0;
       z-index:2;
       margin-left:5px;
-      text-shadow: -2px 2px 2px black; 
+      text-shadow: -2px 2px 2px black;
     }
 
     .forever_nav_right:after{
@@ -197,9 +197,9 @@ select:-moz-focusring {
       right:0;
       z-index:2;
       margin-right:5px;
-      text-shadow: -2px 2px 2px black; 
+      text-shadow: -2px 2px 2px black;
     }
-    
+
     .navbar  {
         text-align: center;
         margin-top: -6px;
@@ -231,7 +231,7 @@ select:-moz-focusring {
         ul.nav > li:not(:last-child) {
              margin-right:30px;
         }
-        
+
             .navbar-nav>li>a {
                 outline:none;
                 font-size: 1.5em;
@@ -245,7 +245,7 @@ select:-moz-focusring {
                 -moz-transition: color .6s ease-in;
                 -o-transition: color .6s ease-in;
             }
-            
+
                /* Supprime le background-color de bootstrap */
             .nav>li>a:focus, .nav>li>a:hover{
                 outline:none;
@@ -262,8 +262,8 @@ select:-moz-focusring {
             .nav li:active, .nav li:selected{
                 outline:none;
             }
-    
-    /**************************************** 
+
+    /****************************************
       2 Grille affichage vignettes posts
     ***************************************** */
     .info-titre-category{
@@ -312,7 +312,7 @@ select:-moz-focusring {
     .offset-bottom{
         margin-bottom:3vh;
     }
-    
+
 }
 @media (min-width: 1200px)  {
 
@@ -333,7 +333,7 @@ select:-moz-focusring {
         left: 0;
         top: 0;
     }
-    
+
         #header h1{
             font-family: banner-font;
             margin-top: 5px;
@@ -350,11 +350,11 @@ select:-moz-focusring {
             font-weight: bolder !important;
             font-size: 1.0em;
         }
-        
+
 /*********************
     1 NAVIGATION QUERY 1200
 ****************************/
-    
+
 .forever_nav_right:before,.forever_nav_right:after{
     content:"°";
   }
@@ -364,7 +364,7 @@ select:-moz-focusring {
       left:0;
       z-index:2;
       margin-left:5px;
-      text-shadow: -2px 2px 2px black; 
+      text-shadow: -2px 2px 2px black;
     }
 
     .forever_nav_right:after{
@@ -373,9 +373,9 @@ select:-moz-focusring {
       right:0;
       z-index:2;
       margin-right:5px;
-      text-shadow: -2px 2px 2px black; 
+      text-shadow: -2px 2px 2px black;
     }
-    
+
     .navbar  {
         text-align: center;
         margin-top: -6px;
@@ -407,11 +407,11 @@ select:-moz-focusring {
         ul.nav li:first-child {
             margin-left:38px;
         }
-        
+
         ul.nav > li:not(:last-child) {
              margin-right:30px;
         }
-        
+
             .navbar-nav>li>a {
                 font-size: 1.5em;
                 padding-top: 10px 0;
@@ -424,18 +424,18 @@ select:-moz-focusring {
             -moz-transition: color .6s ease-in;
             -o-transition: color .6s ease-in;
             }
-            
+
                /* Supprime le background-color de bootstrap */
             .nav>li>a:focus, .nav>li>a:hover{
                 color:#ffb400;
                background-color: transparent;
             }
           .nav li:focus, .nav li:hover{
-              
+
               background-color: #e4e1dc;
             }
-    
-    /**************************************** 
+
+    /****************************************
       2 Grille affichage vignettes posts
     ***************************************** */
     .info-titre-category{
@@ -497,9 +497,9 @@ select:-moz-focusring {
 
 
 
- 
 
-    
+
+
 
 /*
 * 4 Formulaire
@@ -579,7 +579,7 @@ background: url(images/cancel-music.png) right top;
 #title-form p{
     color:red;
     font-size: initial;
-    
+
 }
 #mail-infos{
     width:190px;
@@ -587,7 +587,7 @@ background: url(images/cancel-music.png) right top;
     position:fixed;
     left:-198px;
        background-color: rgb(255, 249, 173);
-    
+
 }
 
 #mail-infos p{
@@ -603,7 +603,7 @@ background: url(images/cancel-music.png) right top;
     animation-name: slideInfo;
     animation-duration: 4s;
     animation-iteration-count: 2;
-    animation-direction: alternate; 
+    animation-direction: alternate;
 }
 .active-infos-error::before{
     content: "\f00d";
@@ -616,7 +616,7 @@ background: url(images/cancel-music.png) right top;
     font-size: 1.4em;
 }
 .active-infos-success{
- 
+
     border:2px solid green;
     -webkit-animation-name: slideInfo; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
@@ -625,7 +625,7 @@ background: url(images/cancel-music.png) right top;
     animation-name: slideInfo;
     animation-duration: 4s;
     animation-iteration-count: 2;
-    animation-direction: alternate; 
+    animation-direction: alternate;
 }
 .active-infos-success::before{
     content: "\f00c";
@@ -642,7 +642,7 @@ background: url(images/cancel-music.png) right top;
     80%   {left:0px;}
     100% {left:0px;}
 }
-.modal-content{    
+.modal-content{
     height:84vh;
 }
 
@@ -650,10 +650,9 @@ textarea.form-control {
     height: auto;
     min-height: 31vh;
 }
-/* 
+/*
 * 6  FOOTER
  =======================*/
-
 .footer{
     bottom: 0;
     width: 100%;
@@ -708,13 +707,11 @@ textarea.form-control {
 }
 
 
-/* 
+/*
 Gestion des images pour les galeries
 */
-
 dl dt img {
     max-height: 206px;
     object-fit: cover;
     object-position: center;
 }
-
