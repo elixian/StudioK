@@ -22,14 +22,13 @@
 <?php wp_head(); ?>
 </head>
 <body>
-      
+
       <div id="myModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
       <span id="cross-close" class="btn" data-dismiss="modal"></span>
-        <div class="modal-dialog">  
+        <div class="modal-dialog">
             <div class="modal-content">
-                
+
                 <div class="modal-body">
-                    <!--<?php //echo FrmFormsController::show_form(3, $key = '', $title=true, $description=true); ?>-->
                  <?php echo do_shortcode('[pirate_forms]')?>
                 </div>
             </div>
@@ -40,11 +39,11 @@
       <span id="about-me"><a href="">About Me</a></span>
     </div>
                 <div id="header">
-      
-                    
+
+
                     <h1>Studio <span id="header_title-ka">KA</span></h1>
                     <p>handmade creativity <b>&</b> project passion </p>
-              
+
                 </div>
                 <nav class="navbar" role="navigation">
                     <div class="container-fluid">
@@ -56,7 +55,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
-                
+
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="forever-nav-collapse">
                            <div id="banner-md">Studio KA <p>handmade amp; creativity</p></div>
@@ -65,8 +64,8 @@
                                                             'menu_class'=> "nav navbar-nav ",
                                                             'after' => "<span class='forever_nav_right'></span>",
                                                             'container' => false)); ?>
-                
-                            
+
+
                         </div>
                     </div>
                 </nav>
