@@ -1,4 +1,4 @@
-<?php 
+<?php
 //include_once("init/generate_menu.php");
 /*
 *DEFINE FOREVER GLOBALS
@@ -47,13 +47,13 @@ function custom_taxonomy() {
         'rewrite'                   => array( 'slug' => 'metoda' ),
 	);
 	register_taxonomy( 'metody', array( 'post' ), $args );
-  
-  
+
+
 }
 add_action( 'init', 'custom_taxonomy', 0 );
 
 
-if ( function_exists('register_sidebar') )
+if ( function_exists('register_sidebar') ){
         register_sidebar(array(
             'name' => 'Footer Widgets Right',
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -61,7 +61,14 @@ if ( function_exists('register_sidebar') )
             'before_title' => '<h2 class="widgettitle">',
             'after_title' => '</h2>',
         ));
-
+				register_sidebar(array(
+						'name' => 'Header Information',
+						'before_widget' => '<div id="%1$s" class="widget %2$s">',
+						'after_widget' => '</div>',
+						'before_title' => '<h2 class="widgettitle">',
+						'after_title' => '</h2>'
+				));
+}
 
 
 $location = 'header-menu';
@@ -79,8 +86,8 @@ register_nav_menu( $location,__( 'Header Menu' ));
                   'slug'    => 'craft'
                   )
                 );
-                
-                
+
+
                 wp_insert_term(
                 'Scrapbooking',
                 'metody',
@@ -89,7 +96,7 @@ register_nav_menu( $location,__( 'Header Menu' ));
                   'slug'    => 'scrapbooking'
                   )
                 );
-                
+
                  wp_insert_term(
                 'Decoupage & Mixmedia',
                 'metody',
@@ -105,10 +112,10 @@ register_nav_menu( $location,__( 'Header Menu' ));
 
 if(!function_exists('load_theme_forever')){
     function load_theme_forever(){
-       
+
         /* Ajoute le THumbnails pour tous les post */
         add_theme_support( 'post-thumbnails' );
-           
+
         remove_action('wp_head', 'rsd_link');
         remove_action('wp_head', 'wp_generator');
         remove_action('wp_head', 'feed_links', 2);
@@ -118,22 +125,22 @@ if(!function_exists('load_theme_forever')){
         remove_action('wp_head', 'start_post_rel_link', 10, 0);
         remove_action('wp_head', 'parent_post_rel_link', 10, 0);
         remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
-        
-        
+
+
         //Allow admin bar in back-end only admin and administrator
         if (!current_user_can('administrator') && !is_admin()) {
           show_admin_bar(false);
         }
-        
+
         //Hide admin bar in front end
         add_filter('show_admin_bar', '__return_false');
     }
 }
-     add_action( 'after_setup_theme', 'load_theme_forever' ); 
+     add_action( 'after_setup_theme', 'load_theme_forever' );
 
 
 
-/* = Ajout des Scripts CSS et JS 
+/* = Ajout des Scripts CSS et JS
 -------------------------------------------------------------- */
 
 add_action('wp_enqueue_scripts', 'gkp_insert_css_in_head');
@@ -150,9 +157,9 @@ function gkp_insert_css_in_head() {
     wp_enqueue_style('forever-style', get_stylesheet_uri(),array('bootstrap_css'),$FOREVER_GLOBALS["version"]);
     wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), VERSION, false );
     wp_enqueue_script( 'forever-js', get_template_directory_uri() . '/js/forever.js', array(), VERSION, false );
- 
-   
-   
+
+
+
 
 }
 
@@ -172,7 +179,7 @@ add_filter('excerpt_length', 'new_excerpt_length');
 
 
 // function createPage(){
-    
+
 //     static $hasEverRun;
 //     print_r($hasEverRun);
 //     if (isset($_GET['activated']) && is_admin()){
@@ -195,7 +202,7 @@ add_filter('excerpt_length', 'new_excerpt_length');
 //                     }
 //             }
 //     }
-    
+
 //     $hasEverRun=true;
 // }
 // add_action("init","createPage");
