@@ -357,7 +357,7 @@ select:-moz-focusring {
     ****************/
   .post-title {
     margin-bottom: 2em;
-    margin-top: 2em;
+    margin-top: 1.2em;
     font-family: 'oswald';
     -webkit-font-smoothing: antialiased;
     font-kerning: auto;
@@ -399,6 +399,12 @@ select:-moz-focusring {
     font-family: Chiller, "Times New Roman", Georgia, Serif;
     font-weight: bolder !important;
     font-size: 1.0em;
+  }
+
+  #header-widget  {
+    margin-bottom: 1.2em;
+    text-align:justify;
+    background-color: rgba(209, 209, 209, 0.1) ;
   }
   /*********************
     1 NAVIGATION QUERY 1200
