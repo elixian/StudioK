@@ -27,7 +27,7 @@ $param = isset($_GET["dispfilter"]); ?>
 
 			     <div class="col-lg-10 col-lg-offset-1 ">
 						 <div id="header-widget" class="col-lg-12">
-							 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Header Information') ) : ?><?php endif; ?>
+							 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('header-sidebar-1') ) : ?><?php endif; ?>
 						 </div>
 						<?php if(!$param):?>
 					    	<?php get_template_part( 'inc/get_all_categories' ); ?>

@@ -53,28 +53,39 @@ function custom_taxonomy() {
 add_action( 'init', 'custom_taxonomy', 0 );
 
 
-if ( function_exists('register_sidebar') ){
-        register_sidebar(array(
-            'name' => 'Footer Widgets Right',
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget' => '</div>',
-            'before_title' => '<h2 class="widgettitle">',
-            'after_title' => '</h2>',
-        ));
-				register_sidebar(array(
-						'name' => 'Header Information',
-						'before_widget' => '<div id="%1$s" class="widget %2$s">',
-						'after_widget' => '</div>',
-						'before_title' => '<h2 class="widgettitle">',
-						'after_title' => '</h2>'
-				));
+/**
+ * Register two widget areas.
+ *
+ * @since Forever
+ *
+ * @return void
+ */
+function forever_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Header Widget', 'Forever' ),
+        'id'            => 'header-sidebar-1',
+        'description'   => __( 'description in the main page.', 'Forever' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer widget', 'Forever' ),
+        'id'            => 'footer-sidebar-2',
+        'description'   => __( 'Description appears in the footer.', 'Forever' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
 }
+add_action( 'widgets_init', 'forever_widgets_init' );
 
 
 $location = 'header-menu';
 register_nav_menu( $location,__( 'Header Menu' ));
-
-
   // 3. Add term "mosaic-home" to custom taxonomy "tiles_categories"
     function example_insert_category() {
          if (isset($_GET['activated']) && is_admin()){
@@ -126,7 +137,6 @@ if(!function_exists('load_theme_forever')){
         remove_action('wp_head', 'parent_post_rel_link', 10, 0);
         remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
-
         //Allow admin bar in back-end only admin and administrator
         if (!current_user_can('administrator') && !is_admin()) {
           show_admin_bar(false);
@@ -158,11 +168,7 @@ function gkp_insert_css_in_head() {
     wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), VERSION, false );
     wp_enqueue_script( 'forever-js', get_template_directory_uri() . '/js/forever.js', array(), VERSION, false );
 
-
-
-
 }
-
 
 /* = Retire la feuille de style embarquée !!
 ----------------------------------------------------------------*/
@@ -176,49 +182,6 @@ function new_excerpt_length($length) {
 return 10;
 }
 add_filter('excerpt_length', 'new_excerpt_length');
-
-
-// function createPage(){
-
-//     static $hasEverRun;
-//     print_r($hasEverRun);
-//     if (isset($_GET['activated']) && is_admin()){
-//             $new_page_title = 'PAGE TEST';
-//             $new_page_content = 'This is the page content';
-//             $new_page_template = ''; //ex. template-custom.php. Leave blank if you don't want a custom page template.
-//             //don't change the code bellow, unless you know what you're doing
-//             $page_check = get_page_by_title($new_page_title);
-//             $new_page = array(
-//                     'post_type' => 'page',
-//                     'post_title' => $new_page_title,
-//                     'post_content' => $new_page_content,
-//                     'post_status' => 'publish',
-//                     'post_author' => 1,
-//             );
-//             if(!isset($page_check->ID)){
-//                     $new_page_id = wp_insert_post($new_page);
-//                     if(!empty($new_page_template)){
-//                             update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
-//                     }
-//             }
-//     }
-
-//     $hasEverRun=true;
-// }
-// add_action("init","createPage");
-
-
-/*
-*Inclus les fichiers customs
-*/
-
- if ( function_exists('register_sidebar') )
-register_sidebar(array('name'=>'Sidebar',
-'before_widget' => '<div>',
-'after_widget' => '</div>',
-'before_title' => '<h3>',
-'after_title' => '</h3>',
-));
 
 
 /*
