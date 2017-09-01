@@ -184,6 +184,7 @@ return 10;
 add_filter('excerpt_length', 'new_excerpt_length');
 
 
+
 /*
 * Give access to editor to widget apparence
 */
