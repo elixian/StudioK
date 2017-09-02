@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="container">
 		<div class="row">
-		     <div class="ol-lg-10 col-lg-offset-1 content_top-marge">
+		     <div class="col-lg-12 col-md-12 col-xs-12 content_top-marge">
 		     	<?php
 		if (have_posts()): /*debut de la boucle */ ?>
 					<?php
@@ -41,9 +41,6 @@ else: ?>
 			 		<p><?php _e('Sorry, no posts for the momement.'); ?></p>
 			 <?php
 endif; ?>
-			</div>
-	    	<div class="col-lg-3">
-				<?php get_sidebar(); ?>
 			</div>
 		</div>
    	</div><!-- End container -->
