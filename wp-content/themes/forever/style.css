@@ -122,7 +122,8 @@ select:-moz-focusring {
   display: block;
 }
 
-@media (min-width: 768px) and (max-width: 1074px) {
+/*@media (min-width: 768px) and (max-width: 1074px)*/
+@media (min-width:768px) {
   #banner-md {
     display: inline-block;
   }
@@ -137,10 +138,12 @@ select:-moz-focusring {
     font-family: 'oswald', 'times new roman';
     background-color: transparent !important;
   }
+  /* Icon Home */
   .navbar-nav li:first-child a:before {
     content: "\f015";
     padding-right: 10px;
     font-family: "FontAwesome";
+    margin-left: -10px;
   }
   /****************************************
       2 Grille affichage vignettes posts
@@ -152,7 +155,7 @@ select:-moz-focusring {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 1.1em;
-    margin-left: -1.1em;/*adjust offset left cause by font-size*/
+    margin-left: -7.1em;/*adjust offset left cause by font-size*/
     color: #484848;
     transform: color .4s ease-in-out;
   }
@@ -191,7 +194,13 @@ select:-moz-focusring {
   }
 }
 
-@media (min-width: 1075px) {
+@media (min-width:992px) {
+  #banner-md{
+    display: none;
+  }
+  .navbar{
+    background: none;
+  }
   /* contenu de vignette */
   .main-content-min-height {
     min-height: 35vh;
