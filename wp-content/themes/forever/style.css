@@ -167,7 +167,7 @@ select:-moz-focusring {
     margin-top: 2vh;
   }
   .content_top-marge {
-    margin-top: 5em;
+    margin-top: 3em;
   }
   .item_link-hover img {
     border: 1px solid transparent;
@@ -186,7 +186,7 @@ select:-moz-focusring {
     color: orange;
   }
   .offset-bottom {
-    margin-bottom: 3vh;
+    margin-bottom: 7vh;
   }
 }
 
@@ -350,7 +350,7 @@ select:-moz-focusring {
     color: orange;
   }
   .offset-bottom {
-    margin-bottom: 3vh;
+    margin-bottom: 7vh;
   }
   /***************
     * POST DETAILS
@@ -525,7 +525,7 @@ select:-moz-focusring {
     color: orange;
   }
   .offset-bottom {
-    margin-bottom: 3vh;
+    margin-bottom: 7vh;
   }
 }
 
@@ -775,7 +775,7 @@ textarea.form-control {
 
 
 /*
-Gestion des images pour les galeries
+Gestion des images pour les galeries type carrousel
 */
 
 dl dt img {

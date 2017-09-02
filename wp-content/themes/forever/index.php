@@ -19,7 +19,6 @@
 
 <?php
 /* On récupère le paramètre afin d'afficher la bonne vue */
-
 $param = isset($_GET["dispfilter"]); ?>
 <?php get_header(); ?>
 <div class="container content_top-marge main-content-min-height">
