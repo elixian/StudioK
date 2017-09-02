@@ -9,10 +9,10 @@
 <?php get_header(); ?>
 <div class="container  content_top-marge main-content-min-height">
 		<div class="row">
-		     <div class="col-lg-10 col-lg-offset-1 ">
+		     <div class="col-lg-10 col-md-12 col-xs-12 col-lg-offset-1 ">
 		     	<? /*debut de la boucle */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-					<div class="col-lg-3 col-md-3 col-xs-6">
+					<div class="col-lg-3 col-md-3  col-sm-4 offset-bottom">
 						<a href="<?php the_permalink(); ?>" class="item_link-hover" >
 			    		    <figure>
 			    		        <?php the_post_thumbnail('thumbnail');?>
@@ -39,9 +39,6 @@
 		     		</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
-			</div>
-	    	<div class="col-lg-3">
-				<?php get_sidebar(); ?>
 			</div>
 		</div>
    	</div><!-- End container -->

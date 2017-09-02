@@ -21,9 +21,9 @@
 /* On récupère le paramètre afin d'afficher la bonne vue */
 $param = isset($_GET["dispfilter"]); ?>
 <?php get_header(); ?>
-<div class="container content_top-marge main-content-min-height">
+<div class="container-fluid content_top-marge main-content-min-height">
 		<div class="row">
-			     <div class="col-lg-12 col-md-12 col-xs-12  ">
+			     <div class="col-lg-10 col-md-12 col-xs-12 col-lg-offset-1 ">
 						 <div	class="row">
 							 <div id="header-widget" class="col-lg-12">
 								 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('header-sidebar-1') ) : ?><?php endif; ?>
