@@ -12,13 +12,12 @@
 		     <div class="col-lg-10 col-md-12 col-xs-12 col-lg-offset-1 ">
 		     	<? /*debut de la boucle */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-					<div class="col-lg-3 col-md-3  col-sm-4 offset-bottom">
+					<div class="col-lg-3 col-md-3 col-sm-4 offset-bottom">
 						<a href="<?php the_permalink(); ?>" class="item_link-hover" >
 			    		    <figure>
 			    		        <?php the_post_thumbnail('thumbnail');?>
 			    		        <figcaption>
 			    		            <?php the_title(); ?>
-
 			    		        </figcaption>
 			    		    </figure>
 			    		</a>
