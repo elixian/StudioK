@@ -152,7 +152,7 @@ select:-moz-focusring {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 1.1em;
-    margin-left: 1.1em;/*adjust offset left cause by font-size*/
+    margin-left: -1.1em;/*adjust offset left cause by font-size*/
     color: #484848;
     transform: color .4s ease-in-out;
   }
@@ -493,7 +493,7 @@ select:-moz-focusring {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 1.1em;
-    margin-left: 1.1em;/*adjust offset left cause by font-size*/
+    margin-left: -1.1em;/*adjust offset left cause by font-size*/
     color: #484848;
     transform: color .4s ease-in-out;
   }
