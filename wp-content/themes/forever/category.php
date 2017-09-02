@@ -7,7 +7,7 @@
  ?>
 
 <?php get_header(); ?>
-<div class="container  content_top-marge main-content-min-height">
+<div class="container-fluid  content_top-marge main-content-min-height">
 		<div class="row">
 		     <div class="col-lg-10 col-md-12 col-xs-12 col-lg-offset-1 ">
 		     	<? /*debut de la boucle */ ?>
