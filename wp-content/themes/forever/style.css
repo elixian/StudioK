@@ -6,6 +6,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 Version: 3.0
 */
 
+/*
+* 0 Mobile version
+*
+*
+*/
+
 @import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans');
 @font-face {
@@ -121,8 +127,61 @@ select:-moz-focusring {
 #pirate-forms-captcha {
   display: block;
 }
+/**********************
+* 0 Mobile version
+***********************/
+/****************************************
+    2 Grille affichage vignettes posts
+  ***************************************** */
+  .info-titre-category {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+     margin-left: -11%;;/*adjust offset left cause by font-size*/
+    color: #484848;
+    transform: color .4s ease-in-out;
+  }
+  .item_link-hover figure {
+    padding: 5px !important;
+    box-shadow: 0px 0px 5px lightgrey;
+    width: 115px;
+    height: 99px;
+    transition: all .4s ease-in-out;
+  }
+  .item_link-hover figcaption {
+    -webkit-font-smoothing: antialiased;
+    margin-top: 2vh;
+  }
+  .content_top-marge {
+    margin-top: 3em;
+  }
+  .item_link-hover img {
+    border: 1px solid transparent;
+    will-change: transform;
+    transition: transform .4s ease-in-out;
+    width: 115px;
+    height: 99px;
+  }
+  .item_link-hover:hover figure {
+    box-shadow: 0px 0px 5px grey;
+  }
+  .item_link-hover:hover img {
+    transform: scale(1.02);
+  }
+  .item_link-hover:hover~.info-titre-category {
+    color: orange;
+  }
+  .offset-bottom {
+    margin-bottom: 7vh;
+  }
 
-/*@media (min-width: 768px) and (max-width: 1074px)*/
+/**********************
+* End Mobil Version
+***********************/
+
 @media (min-width:768px) {
   /*override-sm*/
 

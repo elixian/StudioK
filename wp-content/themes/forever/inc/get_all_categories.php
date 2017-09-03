@@ -22,7 +22,7 @@ $cats = get_categories();
 
         	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-        		<div class="col-lg-3 col-md-3  col-sm-4 offset-bottom">
+        		<div class="col-lg-3 col-md-3  col-sm-4 col-xs-6 offset-bottom">
             		<a href="<?php echo get_category_link( $cat->term_id); ?>" class="item_link-hover" >
             		    <figure>
             		        <?php the_post_thumbnail('medium');?>
