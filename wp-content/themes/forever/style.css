@@ -251,12 +251,13 @@ nav.navbar{
   }
   #contact-infos {
     position: absolute;
-    right: -91vw;
+    left: 91vw;
     display: inline;
   }
 
   nav.navbar, #menu-main{
     background: none ;
+    padding-left: 45px;
   }
 
   /* End header */
@@ -310,6 +311,9 @@ nav.navbar{
   .navbar {
     background-color: none;
   }
+  nav.navbar, #menu-main {
+    padding-left: 0px;
+}
   /****************
       1  HEADER
     *****************/
