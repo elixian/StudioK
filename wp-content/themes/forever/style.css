@@ -195,13 +195,14 @@ nav.navbar{
   ***************************************** */
   .info-titre-category {
     position: absolute;
-    left: 72px;
     margin-top: 10px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 1.1em;
     color: #484848;
     transform: color .4s ease-in-out;
+    right: 0;
+    left: 0;
   }
   .item_link-hover figure {
     padding: 5px !important;
@@ -236,7 +237,16 @@ nav.navbar{
   .offset-bottom {
     margin-bottom: 5em;
   }
-
+  @media screen and (orientation:landscape)
+  and (min-device-width: 319px)
+  and (max-device-width: 768px) {
+    .info-titre-category {
+      left:-19px;
+    }
+    .col-xs-6{
+      width:33%;
+    }
+  }
 /**********************
 * End Mobil Version
 ***********************/
@@ -292,9 +302,7 @@ nav.navbar{
     width: 200px;
     height: 200px;
   }
-  .info-titre-category {
-    left: 102px;
-  }
+
 }
 
 @media (min-width:992px) {
@@ -561,7 +569,6 @@ nav.navbar{
       2 Grille affichage vignettes posts
     ***************************************** */
   .info-titre-category {
-    left: 111px;
     font-size: 1.1em;
     margin-left: 0px;
   }
