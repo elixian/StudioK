@@ -12,12 +12,7 @@ if (have_posts()): ?>
         the_post(); ?>
         <div class="post col-lg-12">
             <h1 class="post-title"><?php the_title(); ?></h1>
-            <a href="https://www.pinterest.com/pin/create/button/"
-              data-pin-do="buttonBookmark"
-                data-pin-custom="true">
-                <!-- <img src="<?php bloginfo('template_url'); ?>/images/pinit-pink.png" class="pinit-btn"/> -->
-              <div class="pinit-btn"></div>
-            </a>
+
             <div class="post-content col-lg-10 col-lg-offset-1">
                 <?php the_content(); ?>
             </div>
@@ -28,6 +23,10 @@ if (have_posts()): ?>
     <?php
 endif; ?>
 </div>
-<div id="delimiter">
-</div>
+<a href="https://www.pinterest.com/pin/create/button/"
+  data-pin-do="buttonBookmark"
+    data-pin-custom="true">
+    <object id="pinit_object" data="<?php bloginfo('template_url'); ?>/images/heart-pinit.svg"
+        type="image/svg+xml"/>
+</a>
 <?php get_footer(); ?>

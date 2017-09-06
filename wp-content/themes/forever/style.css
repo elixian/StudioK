@@ -820,18 +820,6 @@ dl dt img {
   object-position: center;
 }
 
-.pinit-btn {
-  width: 90px;
-  height: 90px;
-  display: block;
-  background: url(images/pinit-blue.png) left top no-repeat;
-  cursor: pointer;
-  background-size: 90px;
-  float: right;
-  transition: all .4s ease-in-out;
-}
-
-.pinit-btn:hover {
-  background: url(images/pinit-pink.png) left top no-repeat;
-  background-size: 90px;
+#pinit_object{
+  width:48px;
 }
