@@ -8,8 +8,7 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xml:space="preserve">
-  <a xlink:href="https://www.pinterest.com/pin/create/button/" target="_blank"  data-pin-do="buttonBookmark"
-      data-pin-custom="true">
+
   <g id="main-heart"><path
     id="Heart"
     d="M23.982,8.505c5.02,-9.442 15.125,-9.475 20.194,-4.778c5.069,4.697 5.101,14.124 0.081,23.567c-3.081,6.209 -10.958,14.782 -17.114,20.266c-1.672,1.49 -3.034,1.431 -4.79,0.018c-6.435,-5.175 -15.394,-13.965 -18.517,-20.155c-5.085,-9.41 -5.117,-18.837 -0.081,-23.566c5.037,-4.73 15.142,-4.762 20.227,4.648Z"
@@ -21,5 +20,5 @@
     <text x="4.511px" y="21.545px" style="font-family:'Chalkduster', cursive;font-size:13.591px;fill:#fff;">P<tspan x="18.31px 29.877px " y="21.545px 21.545px ">IN</tspan>
     </text>
   </g>
-</a>
+
 </svg>

@@ -194,15 +194,14 @@ nav.navbar{
     2 Grille affichage vignettes posts
   ***************************************** */
   .info-titre-category {
-    position: absolute;
+    display: block;
     margin-top: 10px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 1.1em;
     color: #484848;
     transform: color .4s ease-in-out;
-    right: 0;
-    left: 0;
+    width: 150px;
   }
   .item_link-hover figure {
     padding: 5px !important;
@@ -292,7 +291,9 @@ nav.navbar{
   /****************************************
       2 Grille affichage vignettes posts
     ***************************************** */
-
+ .info-titre-category {
+   width:200px;
+ }
   .item_link-hover figure {
     padding: 10px !important;
     width: 220px;
@@ -570,7 +571,8 @@ nav.navbar{
     ***************************************** */
   .info-titre-category {
     font-size: 1.1em;
-    margin-left: 0px;
+     width:240px;
+ 
   }
   .item_link-hover figure {
     padding: 10px !important;
