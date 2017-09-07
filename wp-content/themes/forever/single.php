@@ -15,7 +15,6 @@ if (have_posts()): ?>
                        
                         <svg id="svg-pinit"
                       viewBox="0 0 48 49"
-                      version="1.1"
                       xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink"
                       xml:space="preserve">
