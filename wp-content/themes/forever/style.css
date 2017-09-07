@@ -822,6 +822,10 @@ dl dt img {
   object-position: center;
 }
 
-#pinit_object{
-  width:48px;
+#svg-pinit{
+  display: inherit;
+  margin : 0 auto 20px;
+   width: 50px;
+    height:50px;
+    cursor:pointer;
 }
