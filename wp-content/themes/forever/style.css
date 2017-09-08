@@ -576,7 +576,7 @@ nav.navbar{
   .info-titre-category {
     font-size: 1.1em;
      width:240px;
- 
+
   }
   .item_link-hover figure {
     padding: 10px !important;
@@ -749,12 +749,10 @@ textarea.form-control {
  =======================*/
 
 .footer {
-   position: absolute;
     left: 0;
     bottom: 0;
     height: 120px;
     width: 100%;
-    overflow:hidden;
   background-color: #bdbdbd;
   margin-top: 6vh;
 }
