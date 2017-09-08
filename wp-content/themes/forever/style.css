@@ -753,8 +753,8 @@ textarea.form-control {
     bottom: 0;
     height: 120px;
     width: 100%;
-  background-color: #bdbdbd;
-  margin-top: 6vh;
+    background-color: #bdbdbd;
+    margin-top: 6vh;
 }
 
 #social-links a {
