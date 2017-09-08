@@ -54,14 +54,15 @@ endif; ?>
 <?php get_footer(); ?>
 
 <script type="text/javascript" >
-    
         (function(){
                      var link = document.getElementById("pinit"),
                      svgHeart = document.getElementById("main-heart");
-            
-                    svgHeart.addEventListener("click",function(e){
-                         e.preventDefault;
-                        link.click();
-                        });
+                
+                    if(svgHeart && link){
+                        svgHeart.addEventListener("click",function(e){
+                             e.preventDefault;
+                            link.click();
+                            });
+                    }
                 })();
 </script>
