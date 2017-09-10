@@ -12,7 +12,7 @@ forever.init = (function (){
         /*
         *      set Pollyfill ForEach
         */
-        
+
   Array.prototype.forEach= function(callback,thisArg){
             if(typeof (callback) !== "function"){
                 new TypeError(callback + " is not a function!");
@@ -22,10 +22,10 @@ forever.init = (function (){
                  callback.call(thisArg, this[i], i, this)
             }
         }
-        
+
 
     jQuery(document).ready(function($) {
-        
+
         var initDOMForm = function(){
                                 var tilteId = document.getElementById('title-form');
                                 if(tilteId === null){
@@ -41,12 +41,12 @@ forever.init = (function (){
                                     formDoM[0].insertBefore(divNode,formDoM[0].firstChild);
                                 }
                          };
-       
+
             $('#cross-close').click( function (ev) {
                  ev.preventDefault();
                 var form = document.getElementsByTagName('form');
                 form[0].reset();
-             
+
              });
 
             var btn_sub = document.getElementById('pirate-forms-contact-submit');
@@ -66,25 +66,25 @@ forever.init = (function (){
                     }
                 });
             });
-        
+
         function regWhiteSpace(str){
             var pattern = new RegExp('\\S','g');
             return pattern.test(str);
         }
-        
-        
-        
+
+
+
         /*
         * Gestion synchrone affichage erreurs
         */
-        
-        function getDispInfo(callback) { 
-            setTimeout(function () { // callback asynchrone 
+
+        function getDispInfo(callback) {
+            setTimeout(function () { // callback asynchrone
                 callback(null);
-            }, 500); 
-        } 
-        
-        getDispInfo(function dispInfo(error) { // callback synchrone 
+            }, 500);
+        }
+
+        getDispInfo(function dispInfo(error) { // callback synchrone
             var elemsError =document.getElementsByClassName('pirate_forms_error_box');
             var mailInfos = document.getElementById('mail-infos');
              var arrayNode=  Array.prototype.slice.call(elemsError);
@@ -94,6 +94,7 @@ forever.init = (function (){
                  arrayNode.forEach(function(currentNode){
                      mailInfos.innerHTML += currentNode.innerHTML;
                      setTimeout(function(){
+                       debugger;
                          let activeInfo = document.getElementById('mail-infos'),
                             valueClass = activeInfo.classList.value;
                             if(valueClass !=""){
@@ -113,9 +114,6 @@ forever.init = (function (){
                  }
              }
         });
-        
+
        initDOMForm();
     });
-    
-
-    
