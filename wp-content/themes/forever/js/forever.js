@@ -84,6 +84,7 @@ forever.init = (function (){
             }, 500);
         }
 
+
         getDispInfo(function dispInfo(error) { // callback synchrone
             var elemsError =document.getElementsByClassName('pirate_forms_error_box');
             var mailInfos = document.getElementById('mail-infos');
