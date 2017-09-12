@@ -38,14 +38,14 @@
       <span id="contact-icon" class="btn btn-lg" data-toggle="modal" data-target="#myModal" ></span>
     </div>
                 <div id="header">
-                    <h1>Studio <span id="header_title-ka">KA</span></h1>
+                    <h1>Studio <span class="header_title-ka">KA</span></h1>
                     <p>handmade creativity <b>&</b> project passion </p>
                 </div>
                 <nav class="navbar" role="navigation">
                     <div class="container-fluid">
                         <div class="navbar-header navbar-default">
                           <div id="header-collapsed">
-                              <h1>Studio <span>KA</span></h1>
+                              <h1>Studio <span class="header_title-ka">KA</span></h1>
                           </div>
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#forever-nav-collapse">
                                 <span class="sr-only">Toggle navigation</span>

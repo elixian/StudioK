@@ -18,7 +18,14 @@ Version: 3.0
   font-family: banner-font;
   src: url('fonts/Billy Ohio.ttf');
 }
-
+@font-face{
+  font-family: studio-font;
+  src:url('fonts/White Army.ttf');
+}
+@font-face{
+  font-family: ka-font;
+  src:url('fonts/James_Fajardo.ttf');
+}
 img.alignright {
   float: right;
   margin: 0 0 1em 1em;
@@ -127,7 +134,7 @@ nav.navbar{
 }
 
 #banner-md {
-  font-family: banner-font;
+  font-family: studio-font;
   display: none;
   float: left;
 }
@@ -150,6 +157,13 @@ nav.navbar{
 #header{
   display:none;
 }
+#header h1,#header-collapsed h1{
+    font-family: studio-font;
+}
+.header_title-ka{
+    font-family: ka-font;
+    font-weight: bold;
+}
 #header-collapsed{
   position:absolute;
   right:0;
@@ -161,7 +175,6 @@ nav.navbar{
 #header-collapsed h1{
   font-size:2em;
   line-height: 1em;
-  font-family: banner-font;
   letter-spacing: 9px;
 }
 
@@ -338,7 +351,6 @@ nav.navbar{
     top: 0;
   }
   #header h1 {
-    font-family: banner-font;
     margin-top: 5px;
     font-size: 6em;
     letter-spacing: 0.3em;
@@ -348,8 +360,8 @@ nav.navbar{
     margin-right: 18px;
     letter-spacing: 0.3em;
   }
-  #header_title-ka {
-    font-family: Chiller, "Times New Roman", Georgia, Serif;
+  .header_title-ka {
+    font-family: ka-font;
     font-weight: bolder !important;
     font-size: 1.0em;
   }
@@ -473,19 +485,12 @@ nav.navbar{
     left: 0;
     top: 0;
   }
-  #header h1 {
-    font-family: banner-font;
-    margin-top: 5px;
-    font-size: 6em;
-    letter-spacing: 0.3em;
-    margin-bottom: 13px;
-  }
   #header p {
     margin-right: 18px;
     letter-spacing: 0.3em;
   }
-  #header_title-ka {
-    font-family: Chiller, "Times New Roman", Georgia, Serif;
+  .header_title-ka {
+    font-family: ka-font;
     font-weight: bolder !important;
     font-size: 1.0em;
   }
